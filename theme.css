@@ -1,0 +1,248 @@
+/*──────────────────────────────────────
+Nu Ayu for Obsidian
+Version 20260403
+@paralloid
+───────────────────────────────────────*/
+@charset "UTF-8";
+body {
+    --accent-h: 25 !important;
+    --accent-s: 100% !important;
+    --accent-l: 46% !important;
+    --divider-color: transparent;
+    --clickable-icon-radius: var(--radius-m);
+    --tab-radius-active: 12px 12px 0 0;
+    --tab-curve: 0px;
+    --radius-s: 12px;
+    --radius-m: 18px;
+    --radius-l: 30px;
+    --background-modifier-hover: transparent;
+    --metadata-property-box-shadow-hover: none;
+    --titlebar-background: var(--background-secondary);
+    --titlebar-background-focused: var(--background-secondary);
+    --shadow-s: 0 0 8px rgba(0,0,0,0.1) !important;
+    --shadow-m: 0 0 15px rgba(0,0,0,0.1) !important;
+    --link-decoration: none;
+    --link-decoration-hover: none;
+    --checklist-done-decoration: none;
+    --table-border-width: 1px;
+    --table-border-color: var(--background-secondary-alt);
+    --input-radius: var(--radius-m);
+    --input-shadow: var(--shadow-s) !important;
+    --metadata-property-radius: var(--radius-m);
+    --metadata-property-radius-hover: var(--radius-m);
+    --metadata-property-radius-focus: var(--radius-m);
+    --code-background: var(--background-secondary);
+    --dropdown-background: var(--background-secondary-alt) !important;
+    --setting-items-background: none;
+    --input-shadow-hover: none !important;
+    --embed-block-shadow-hover: none;
+    --hr-thickness: 1px;
+    --callout-bug: 215,59,11;
+    --callout-default: 95,95,143;
+    --callout-error: 215,59,11;
+    --callout-example: 90,90,181;
+    --callout-fail: 215,59,11;
+    --callout-important: 106,160,151;
+    --callout-info: 55,108,160;
+    --callout-question: 188,82,30;
+    --callout-success: 135,188,121;
+    --callout-summary: 106,160,151;
+    --callout-tip: 106,160,151;
+    --callout-todo: 55,108,160;
+    --callout-warning: 188,82,30;
+    --callout-quote: 55,108,160;
+    --code-function: #c19e61;
+    --code-important: #e96100;
+    --code-keyword: #ba929e;
+    --code-operator: #ba6a6b;
+    /* --code-property: #6abaad; */
+    --code-property: var(--text-muted);
+    --code-string: #82ba6a;
+    --code-tag: #ba6a6b;
+    --code-value: #a86aba;
+    --nav-item-size: 0.9em;
+    --list-marker-color: var(--accent-color);
+}
+
+.is-phone {--nav-item-size: 1.25em}
+.is-tablet {--nav-item-size: 1.1em}
+
+.theme-dark {
+    --color-base-30: var(--background-secondary-alt);
+    --color-base-35: var(--background-secondary-alt);
+    --text-normal: #e3e5ea;
+    --text-muted: #a0a2b6;
+    --text-extreme: #fff;
+    --interactive-accent: #e96100 !important;
+    --accent-color: #e96100 !important;
+    --color-accent: #e96100 !important;
+}
+
+body:not(.is-mobile).theme-dark {
+    --background-primary: #1f1f27;
+    --background-primary-alt: #1c1c24;
+    --background-secondary: #19181f;
+    --background-secondary-alt: #353342;
+}
+
+.is-mobile.theme-dark {
+    --background-primary: #000;
+    --background-primary-alt: #000;
+    --background-secondary: #19181f;
+    --background-secondary-alt: #000;
+}
+
+.theme-light {
+    --background-primary: #fafafa;
+    --background-primary-alt: #f2f2f2;
+    --background-secondary: #f4f4f4;
+    --background-secondary-alt: #e3e3e1;
+    --text-normal: #6b6884;
+    --text-muted: #9593a7;
+    --text-extreme: #5e5b74;
+    --interactive-accent: #e96100 !important;
+    --accent-color: #e96100 !important;
+    --color-accent: #e96100 !important;
+}
+
+body.is-phone {
+    --mobile-sidebar-width: 100%;
+}
+
+.is-mobile.theme-dark {
+  --raised-background: var(--background-secondary) !important;
+  --touch-background: var(--background-secondary) !important;
+}
+
+.is-mobile.theme-light {
+    --raised-background: var(--background-primary) !important;
+    --touch-background: var(--background-primary) !important;
+}
+
+body.is-tablet {
+    --titlebar-background: var(--background-secondary) !important;
+}
+
+s,
+del,
+.cm-strikethrough {
+    color: var(--text-muted);
+}
+
+.status-bar {
+    left: 50%;
+    transform: translatex(-50%);
+    bottom: 5px;
+    width: fit-content;
+    max-width: min(60rem, 90vw);
+    gap: 10px;
+    border-radius: var(--radius-l);
+    box-shadow: var(--shadow-s);
+}
+
+.clickable-icon:hover {
+    background: transparent;
+}
+
+.markdown-embed-title {
+  display: none;
+}
+
+.inline-title { 
+    color: var(--text-extreme);
+    padding-bottom: 6px; 
+    border-bottom: 1px solid var(--background-secondary-alt);
+}
+
+.external-embed {
+    border-radius: var(--radius-s);
+}
+
+@keyframes fade-in-prompt {
+    from {
+        opacity: 0.1;
+        scale: 1.03;
+    }
+    to {
+        opacity: 1;
+        scale: 1.0;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0.3;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@media (hover: hover) {
+    .nav-file-title:hover,
+    .nav-folder-title:hover,
+    .nav-file-title:active,
+    .nav-folder-title:active {
+        color: var(--text-extreme);
+    }
+}
+
+strong,
+b,
+.cm-strong {
+    color: var(--text-extreme);   
+}
+
+.workspace-tab-header.tappable.is-active.mod-active {
+    box-shadow: var(--shadow-s);
+}
+
+
+.mod-left-split .workspace-tab-header-container .workspace-tab-header.is-active:hover,
+.mod-right-split .workspace-tab-header-container .workspace-tab-header.is-active:hover,
+.mod-left-split .workspace-tab-header-container .workspace-tab-header.is-active,
+.mod-right-split .workspace-tab-header-container .workspace-tab-header.is-active {
+    background-color: var(--background-primary);
+    box-shadow: none;
+}
+
+.workspace .mod-root .workspace-tab-header-inner::after {
+    background: none;
+}
+
+.workspace-tab-header-inner-close-button {
+    animation: fade-in 0.2s ease-out;
+}
+
+.workspace .mod-root {
+    --tab-radius: 12px 12px 0 0;
+}
+
+.is-mobile .nav-files-container {
+    padding: var(--size-4-2) var(--size-4-4) var(--size-4-8);
+}
+
+.workspace-leaf-content[data-type=bookmarks] .view-content {
+    padding: var(--size-4-2) var(--size-4-4) var(--size-4-8);
+}
+
+body:not(.is-phone) .prompt {
+    animation: fade-in-prompt 0.15s ease-out !important;
+}
+
+.dataview.task-list-item:hover,
+.dataview.task-list-basic-item:hover,
+.dataview {
+    transition: none !important;
+    box-shadow: none !important;
+    animation: fade-in 0.2s linear;
+    background-color: transparent;
+}
+
+.mobile-navbar-action.has-longpress-menu .navbar-action-flair {
+    display: none;
+}
+
+.is-phone .bases-embed, 
+.is-phone .cm-lang-base {
+    padding-left: 20px;
+}
