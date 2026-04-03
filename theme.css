@@ -3,6 +3,7 @@ Nu Ayu for Obsidian
 Version 20260403
 @paralloid
 ───────────────────────────────────────*/
+
 @charset "UTF-8";
 body {
     --accent-h: 25 !important;
@@ -15,7 +16,8 @@ body {
     --radius-s: 12px;
     --radius-m: 18px;
     --radius-l: 30px;
-    --background-modifier-hover: transparent;
+    --background-modifier-hover: var(--text-selection);
+    --interactive-hover: var(--background-modifier-hover) !important;
     --metadata-property-box-shadow-hover: none;
     --titlebar-background: var(--background-secondary);
     --titlebar-background-focused: var(--background-secondary);
@@ -196,6 +198,9 @@ b,
     box-shadow: var(--shadow-s);
 }
 
+.mod-settings {
+    --background-modifier-hover: transparent;
+}
 
 .mod-left-split .workspace-tab-header-container .workspace-tab-header.is-active:hover,
 .mod-right-split .workspace-tab-header-container .workspace-tab-header.is-active:hover,
@@ -245,4 +250,9 @@ body:not(.is-phone) .prompt {
 .is-phone .bases-embed, 
 .is-phone .cm-lang-base {
     padding-left: 20px;
+}
+
+.is-phone .menu .suggestion-group .suggestion-item:not(.is-label),
+.is-phone .menu-item:not(.is-label) {
+    background-color: transparent;
 }
