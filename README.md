@@ -13,10 +13,18 @@ Minimal theme focused on removing distractions and keeping it super clean and ai
 
 ## Screenshots
 
-![](https://github.com/MrParalloid/nu-ayu/blob/main/screenshots/ayu-1.png)
-
 ![](https://github.com/MrParalloid/nu-ayu/blob/main/screenshots/ayu-2.png)
+
+![](https://github.com/MrParalloid/nu-ayu/blob/main/screenshots/ayu-1.png)
 
 ![](https://github.com/MrParalloid/nu-ayu/blob/main/screenshots/ayu-3.png)
 
 ![](https://github.com/MrParalloid/nu-ayu/blob/main/screenshots/ayu-4.png)
+
+![](https://github.com/MrParalloid/nu-ayu/blob/main/screenshots/ayu-5.png)
+
+![](https://github.com/MrParalloid/nu-ayu/blob/main/screenshots/ayu-6.png)
+
+![](https://github.com/MrParalloid/nu-ayu/blob/main/screenshots/ayu-7.png)
+
+![](https://github.com/MrParalloid/nu-ayu/blob/main/screenshots/ayu-8.png)
