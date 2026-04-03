@@ -10,6 +10,7 @@ body {
     --accent-s: 100% !important;
     --accent-l: 46% !important;
     --divider-color: transparent;
+    --nav-item-background-hover: transparent;
     --clickable-icon-radius: var(--radius-m);
     --tab-radius-active: 12px 12px 0 0;
     --tab-curve: 0px;
@@ -44,12 +45,12 @@ body {
     --callout-error: 215,59,11;
     --callout-example: 90,90,181;
     --callout-fail: 215,59,11;
-    --callout-important: 106,160,151;
+    --callout-important: 102,176,163;
     --callout-info: 55,108,160;
     --callout-question: 188,82,30;
     --callout-success: 135,188,121;
-    --callout-summary: 106,160,151;
-    --callout-tip: 106,160,151;
+    --callout-summary: 102,176,163;
+    --callout-tip: 102,176,163;
     --callout-todo: 55,108,160;
     --callout-warning: 188,82,30;
     --callout-quote: 55,108,160;
@@ -139,7 +140,7 @@ del,
     max-width: min(60rem, 90vw);
     gap: 10px;
     border-radius: var(--radius-l);
-    box-shadow: var(--shadow-s);
+    /* box-shadow: var(--shadow-s); */
 }
 
 .clickable-icon:hover {
@@ -179,6 +180,7 @@ del,
         opacity: 1;
     }
 }
+
 @media (hover: hover) {
     .nav-file-title:hover,
     .nav-folder-title:hover,
@@ -198,6 +200,7 @@ b,
     box-shadow: var(--shadow-s);
 }
 
+.workspace-tab-header-container,
 .mod-settings {
     --background-modifier-hover: transparent;
 }
@@ -255,4 +258,28 @@ body:not(.is-phone) .prompt {
 .is-phone .menu .suggestion-group .suggestion-item:not(.is-label),
 .is-phone .menu-item:not(.is-label) {
     background-color: transparent;
+}
+
+.canvas-card-menu {
+    border-radius: var(--radius-l);
+    margin-bottom: 3vw;
+    padding: 5px;
+}
+
+.canvas-control-group.mod-raised,
+.canvas-menu {
+    border-radius: var(--radius-l);
+    border: none;
+    --interactive-hover: var(--background-secondary);
+}
+
+@media print {
+  .pdf-toolbar,
+  .pdf-container,
+  .bases-cards-cover,
+  .internal-embed img,
+  .internal-embed .canvas-minimap {
+    opacity: 1 !important;
+    animation: none !important;
+  }
 }
