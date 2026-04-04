@@ -1,15 +1,37 @@
 /*──────────────────────────────────────
-Nu Ayu for Obsidian
-Version 20260403
+Nuayu for Obsidian
+Version 2026.0404
 @paralloid
 ───────────────────────────────────────*/
+/* @settings
+
+name: Nu Ayu Settings
+id: ayu-settings
+settings:
+
+    -
+        id: mobile-full-black
+        title: Use fully black background on Phones and Tablets
+        type: class-toggle
+        default: false
+    -
+        id: button-close-left
+        title: Tab close button on the left
+        type: class-toggle
+        default: true
+    -
+        id: accent-folders
+        title: Paint folders orange
+        type: class-toggle
+        default: false
+*/
 
 @charset "UTF-8";
 body {
     --accent-h: 25 !important;
     --accent-s: 100% !important;
     --accent-l: 46% !important;
-    --divider-color: transparent;
+    --divider-color: transparent !important;
     --nav-item-background-hover: transparent;
     --clickable-icon-radius: var(--radius-m);
     --tab-radius-active: 12px 12px 0 0;
@@ -23,7 +45,8 @@ body {
     --titlebar-background: var(--background-secondary);
     --titlebar-background-focused: var(--background-secondary);
     --shadow-s: 0 0 8px rgba(0,0,0,0.1) !important;
-    --shadow-m: 0 0 15px rgba(0,0,0,0.1) !important;
+    --shadow-m: 0 0 15px rgba(0,0,0,0.2) !important;
+    --shadow-l: 0 0 25px rgba(0,0,0,0.3) !important;
     --link-decoration: none;
     --link-decoration-hover: none;
     --checklist-done-decoration: none;
@@ -65,30 +88,40 @@ body {
     --code-value: #a86aba;
     --nav-item-size: 0.9em;
     --list-marker-color: var(--accent-color);
+    --prompt-border-color: transparent;
+    --workspace-background-translucent: rgba(var(--mono-rgb-0), 0.2);
+    --nav-item-background-active: transparent;
+    --nav-item-color-active: var(--text-extreme);
+    --nav-item-color-hover: var(--text-muted);
 }
 
 .is-phone {--nav-item-size: 1.25em}
 .is-tablet {--nav-item-size: 1.1em}
+
+.tooltip {
+    animation: fade-in 200ms forwards ease-in-out !important;
+}
 
 .theme-dark {
     --color-base-30: var(--background-secondary-alt);
     --color-base-35: var(--background-secondary-alt);
     --text-normal: #e3e5ea;
     --text-muted: #a0a2b6;
+    --text-faint: #777992;
     --text-extreme: #fff;
     --interactive-accent: #e96100 !important;
     --accent-color: #e96100 !important;
     --color-accent: #e96100 !important;
 }
 
-body:not(.is-mobile).theme-dark {
+.theme-dark {
     --background-primary: #1f1f27;
     --background-primary-alt: #1c1c24;
     --background-secondary: #19181f;
     --background-secondary-alt: #353342;
 }
 
-.is-mobile.theme-dark {
+.is-mobile.mobile-full-black.theme-dark {
     --background-primary: #000;
     --background-primary-alt: #000;
     --background-secondary: #19181f;
@@ -181,15 +214,6 @@ del,
     }
 }
 
-@media (hover: hover) {
-    .nav-file-title:hover,
-    .nav-folder-title:hover,
-    .nav-file-title:active,
-    .nav-folder-title:active {
-        color: var(--text-extreme);
-    }
-}
-
 strong,
 b,
 .cm-strong {
@@ -213,6 +237,31 @@ b,
     box-shadow: none;
 }
 
+body.button-close-left .workspace-tab-header-inner-close-button {
+    order: -1;
+}
+
+body.button-close-left .workspace-tabs .workspace-tab-header-inner-icon { 
+    order: 1;
+}
+
+body.button-close-left .workspace-tabs .workspace-tab-header-inner {
+    transition: display 0.3s linear;
+}
+
+body.button-close-left .mod-root .workspace-tab-header-inner-close-button {
+    display: flex !important;
+}
+
+body.button-close-left .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner-close-button {
+    color: transparent;
+}
+
+body.button-close-left .mod-root .workspace-tab-header:hover .workspace-tab-header-inner-close-button {
+    color: var(--text-muted);
+    transition: color 0.2s ease-out;
+}
+
 .workspace .mod-root .workspace-tab-header-inner::after {
     background: none;
 }
@@ -227,6 +276,17 @@ b,
 
 .is-mobile .nav-files-container {
     padding: var(--size-4-2) var(--size-4-4) var(--size-4-8);
+}
+
+.accent-folders .nav-folder-title:hover,
+.accent-folders .nav-folder-title {
+    color: var(--color-accent) !important;
+    font-weight: 550 !important;
+}
+
+.nav-buttons-container .nav-action-button.is-active,
+.nav-buttons-container .clickable-icon.is-active {
+    background-color: transparent;
 }
 
 .workspace-leaf-content[data-type=bookmarks] .view-content {
@@ -273,10 +333,40 @@ body:not(.is-phone) .prompt {
     --interactive-hover: var(--background-secondary);
 }
 
+/* SMOOTH FADE-INS CONTENT */
+
+.nav-files-container .tree-item:not(.is-collapsed) .nav-folder-children {
+    isolation: isolate;
+    animation: fade-in 0.3s ease-in-out;
+}
+
+body:not(.is-mobile) .pdf-toolbar {
+    opacity: 0;
+    animation: fade-in 0.2s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+body:not(.is-mobile) .pdf-container {
+    opacity: 0;
+    animation: fade-in 0.2s ease-out forwards;
+    animation-delay: 0.1s;
+}
+
+.internal-embed {
+    animation: fade-in 0.3s ease-out !important;
+    animation-delay: 0.1s;
+}
+
+body:not(.is-mobile) .ddc_ink_embed-block {
+    animation: fade-in 0.2s ease-out forwards;
+    animation-delay: 0.1s;
+}
+
 @media print {
   .pdf-toolbar,
   .pdf-container,
   .bases-cards-cover,
+  .ddc_ink_embed-block,
   .internal-embed img,
   .internal-embed .canvas-minimap {
     opacity: 1 !important;
