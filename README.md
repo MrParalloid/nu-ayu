@@ -24,6 +24,8 @@ The approach was "change as little as possible" — only where it matters. This 
 
 As a result you have much less overwhelming experience, less distractions, more space for meaningful work.
 
+<a href='https://ko-fi.com/G2G21XAEJ9' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
 ## Screenshots
 
 ![](https://github.com/MrParalloid/nu-ayu/blob/main/screenshots/ayu-2.png)
