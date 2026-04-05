@@ -1,5 +1,5 @@
 /*──────────────────────────────────────
-Nuayu for Obsidian
+Nu Ayu for Obsidian
 Version 2026.0405
 @paralloid
 ───────────────────────────────────────*/
@@ -89,7 +89,7 @@ body {
     --list-marker-color: var(--accent-color);
     --prompt-border-color: transparent;
     --workspace-background-translucent: rgba(var(--mono-rgb-0), 0.2);
-    --nav-item-background-active: transparent;
+    --nav-item-background-active: var(--background-secondary-alt);
     --nav-item-color-active: var(--text-extreme);
     --nav-item-color-hover: var(--text-muted);
 }
@@ -289,6 +289,12 @@ body.button-close-left .mod-root .workspace-tab-header:hover .workspace-tab-head
 .accent-folders .nav-folder-title {
     color: var(--color-accent) !important;
     font-weight: 550 !important;
+}
+
+.tree-item-self.is-active.has-focus {
+    background-color: var(--color-accent) !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .nav-buttons-container .nav-action-button.is-active,
