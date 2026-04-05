@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Nuayu for Obsidian
-Version 2026.0404
+Version 2026.0405
 @paralloid
 ───────────────────────────────────────*/
 /* @settings
@@ -81,7 +81,6 @@ body {
     --code-important: #e96100;
     --code-keyword: #ba929e;
     --code-operator: #ba6a6b;
-    /* --code-property: #6abaad; */
     --code-property: var(--text-muted);
     --code-string: #82ba6a;
     --code-tag: #ba6a6b;
@@ -98,8 +97,8 @@ body {
 .is-phone {--nav-item-size: 1.25em}
 .is-tablet {--nav-item-size: 1.1em}
 
-.tooltip {
-    animation: fade-in 200ms forwards ease-in-out !important;
+.cm-formatting {
+    animation: fade-in 200ms ease-out;
 }
 
 .theme-dark {
@@ -125,7 +124,7 @@ body {
     --background-primary: #000;
     --background-primary-alt: #000;
     --background-secondary: #19181f;
-    --background-secondary-alt: #000;
+    --background-secondary-alt: #272530;
 }
 
 .theme-light {
@@ -159,10 +158,19 @@ body.is-tablet {
     --titlebar-background: var(--background-secondary) !important;
 }
 
+.markdown-source-view.mod-cm6 .cm-line:hover .cm-fold-indicator .collapse-indicator, .markdown-source-view.mod-cm6 .cm-fold-indicator.is-collapsed .collapse-indicator {
+    animation: fade-in 400ms ease-out;
+}
+
 s,
 del,
 .cm-strikethrough {
     color: var(--text-muted);
+}
+
+.search-result-file-match:hover .search-result-file-match-replace-button,
+.tooltip {
+    animation: fade-in 200ms forwards ease-in-out !important;
 }
 
 .status-bar {
@@ -173,7 +181,6 @@ del,
     max-width: min(60rem, 90vw);
     gap: 10px;
     border-radius: var(--radius-l);
-    /* box-shadow: var(--shadow-s); */
 }
 
 .clickable-icon:hover {
@@ -331,6 +338,10 @@ body:not(.is-phone) .prompt {
     border-radius: var(--radius-l);
     border: none;
     --interactive-hover: var(--background-secondary);
+}
+
+.search-result-file-match:hover {
+    background-color: transparent;
 }
 
 /* SMOOTH FADE-INS CONTENT */
