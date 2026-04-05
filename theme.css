@@ -100,12 +100,18 @@ body {
     --h1-weight: 500;
     --h2-weight: 400;
     --h3-weight: 400;
-    --h4-weight: 300;
-    --h5-weight: 300;
-    --h6-weight: 150;
+    --h4-weight: 400;
+    --h5-weight: 400;
+    --h6-weight: 300;
     --h4-size: 1em;
     --h5-size: 1em;
     --h6-size: 1em;
+    --h1-color: var(--text-extreme);
+    --h2-color: var(--text-extreme);
+    --h3-color: var(--text-extreme);
+    --h4-color: var(--text-extreme);
+    --h5-color: var(--text-extreme);
+    --h6-color: var(--text-extreme);
 }
 
 .thin-headers {
@@ -114,7 +120,7 @@ body {
     --h3-weight: 250;
     --h4-weight: 250;
     --h5-weight: 250;
-    --h6-weight: 100;
+    --h6-weight: 150;
 }
 
 .is-phone {--nav-item-size: 1.25em}
@@ -141,6 +147,7 @@ body {
     --background-primary-alt: #1c1c24;
     --background-secondary: #19181f;
     --background-secondary-alt: #353342;
+    --text-highlight-bg: rgba(30,235,100,0.3);
 }
 
 .is-mobile.mobile-full-black.theme-dark {
@@ -162,6 +169,7 @@ body {
     --interactive-accent: #e96100 !important;
     --accent-color: #e96100 !important;
     --color-accent: #e96100 !important;
+    --text-highlight-bg: rgba(180,255,100,0.5);
 }
 
 body.is-phone {
