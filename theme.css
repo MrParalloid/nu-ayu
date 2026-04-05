@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
-Nu Ayu for Obsidian
-Version 2026.0405
+Nuayu for Obsidian
+Version 2026.0406
 @paralloid
 ───────────────────────────────────────*/
 /* @settings
@@ -22,6 +22,11 @@ settings:
     -
         id: accent-folders
         title: Paint folders orange
+        type: class-toggle
+        default: false
+    -
+        id: thin-headers
+        title: Fancy thin font in headers
         type: class-toggle
         default: false
 */
@@ -92,6 +97,24 @@ body {
     --nav-item-background-active: var(--background-secondary-alt);
     --nav-item-color-active: var(--text-extreme);
     --nav-item-color-hover: var(--text-muted);
+    --h1-weight: 500;
+    --h2-weight: 400;
+    --h3-weight: 400;
+    --h4-weight: 300;
+    --h5-weight: 300;
+    --h6-weight: 150;
+    --h4-size: 1em;
+    --h5-size: 1em;
+    --h6-size: 1em;
+}
+
+.thin-headers {
+    --h1-weight: 350;
+    --h2-weight: 250;
+    --h3-weight: 250;
+    --h4-weight: 250;
+    --h5-weight: 250;
+    --h6-weight: 100;
 }
 
 .is-phone {--nav-item-size: 1.25em}
@@ -104,7 +127,7 @@ body {
 .theme-dark {
     --color-base-30: var(--background-secondary-alt);
     --color-base-35: var(--background-secondary-alt);
-    --text-normal: #e3e5ea;
+    --text-normal: #d2d4d8;
     --text-muted: #a0a2b6;
     --text-faint: #777992;
     --text-extreme: #fff;
@@ -134,6 +157,7 @@ body {
     --background-secondary-alt: #e3e3e1;
     --text-normal: #6b6884;
     --text-muted: #9593a7;
+    --text-faint: #a8a5bb;
     --text-extreme: #5e5b74;
     --interactive-accent: #e96100 !important;
     --accent-color: #e96100 !important;
@@ -292,10 +316,18 @@ body.button-close-left .mod-root .workspace-tab-header:hover .workspace-tab-head
 }
 
 .tree-item-self.is-active.has-focus {
-    background-color: var(--color-accent) !important;
     border: none !important;
     box-shadow: none !important;
+    background-color: var(--interactive-hover) !important;
 }
+
+/* .theme-dark .tree-item-self.is-active.has-focus {
+    background-color: var(--color-accent) !important;
+}
+
+.theme-light .tree-item-self.is-active.has-focus {
+    background-color: var(--interactive-hover) !important;
+} */
 
 .nav-buttons-container .nav-action-button.is-active,
 .nav-buttons-container .clickable-icon.is-active {
@@ -357,19 +389,19 @@ body:not(.is-phone) .prompt {
     animation: fade-in 0.3s ease-in-out;
 }
 
-body:not(.is-mobile) .pdf-toolbar {
+.pdf-toolbar {
     opacity: 0;
-    animation: fade-in 0.2s ease-out forwards;
-    animation-delay: 0.2s;
+    animation: fade-in 0.3s ease-out forwards;
+    animation-delay: 0.15s;
 }
 
-body:not(.is-mobile) .pdf-container {
+.pdf-container {
     opacity: 0;
-    animation: fade-in 0.2s ease-out forwards;
-    animation-delay: 0.1s;
+    animation: fade-in 0.3s ease-out forwards;
+    animation-delay: 0.3s;
 }
 
-.internal-embed {
+body:not(.is-mobile) .internal-embed {
     animation: fade-in 0.3s ease-out !important;
     animation-delay: 0.1s;
 }
