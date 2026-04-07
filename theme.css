@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Nuayu for Obsidian
-Version 2026.0407
+Version 2026.0408
 @paralloid
 ───────────────────────────────────────*/
 /* @settings
@@ -12,21 +12,31 @@ settings:
     -
         id: mobile-full-black
         title: Use fully black background on Phones and Tablets
+        description: Replaces standard dark blue backgrounds on mobile devices, saving some battery on OLED screens as a bonus.
         type: class-toggle
         default: false
     -
         id: button-close-left
         title: Tab close button on the left
+        description: MacOS users can enjoy familar placement of the Tab Close button.
         type: class-toggle
         default: true
     -
         id: accent-folders
         title: Paint folders orange
+        description: Apply awesome orange accent color to folders in the File Tree.
         type: class-toggle
         default: false
     -
         id: thin-headers
         title: Fancy thin font in headers
+        description: This makes Headers use thinner font for more classy look.
+        type: class-toggle
+        default: false
+    -
+        id: normal-links
+        title: Remove accent colors from links and mark them in bold
+        description: This gives calmer look to notes, especially with big amounts of links in them.
         type: class-toggle
         default: false
 */
@@ -36,7 +46,7 @@ body {
     --accent-h: 25 !important;
     --accent-l: 46% !important;
     --accent-s: 100% !important;
-    --anim-duration-fast: 160ms;
+    --anim-duration-fast: 180ms;
     --anim-duration-moderate: 320ms;
     --anim-duration-none: 0;
     --anim-duration-slow: 640ms;
@@ -76,6 +86,9 @@ body {
     --divider-color: transparent !important;
     --dropdown-background: var(--background-secondary-alt) !important;
     --embed-block-shadow-hover: none;
+    --font-normal: 350;
+    --bold-modifier: 250;
+    --font-bold: calc(var(--font-normal) + var(--bold-modifier));
     --h1-color: var(--text-extreme);
     --h1-weight: 500;
     --h2-color: var(--text-extreme);
@@ -101,6 +114,7 @@ body {
     --link-color-hover: var(--link-color);
     --link-external-color-hover: var(--link-external-color);
     --list-marker-color: var(--accent-color);
+    --link-weight: var(--font-normal);
     --metadata-property-box-shadow-hover: none;
     --metadata-property-radius-focus: var(--radius-m);
     --metadata-property-radius-hover: var(--radius-m);
@@ -128,6 +142,11 @@ body {
     --workspace-background-translucent: rgba(var(--mono-rgb-0), 0.2);
 }
 
+.normal-links {
+    --link-color: var(--text-extreme);
+    --link-weight: var(--font-bold);
+}
+
 .thin-headers {
     --h1-weight: 350;
     --h2-weight: 250;
@@ -137,13 +156,17 @@ body {
     --h6-weight: 150;
 }
 
+h4, .markdown-rendered h4 {
+    border-bottom: 1px solid var(--background-modifier-border);
+}
+
 .theme-dark {
     --accent-color: #e96100 !important;
     --color-accent: #e96100 !important;
     --color-base-30: var(--background-secondary-alt);
     --color-base-35: var(--background-secondary-alt);
     --interactive-accent: #e96100 !important;
-    --shadow-opacity: 0.7;
+    --shadow-opacity: 0.4;
     --text-extreme: #fff;
     --text-faint: #777992;
     --text-muted: #a0a2b6;
@@ -216,8 +239,18 @@ del,
     animation: fade-in var(--anim-duration-moderate) ease-out;
 }
 
+.markdown-rendered mark,
+.cm-highlight {
+    color: var(--text-extreme) !important;
+}
+
 hr {
     margin: 0px !important;
+}
+
+.markdown-source-view.mod-cm6 .cm-scroller,
+.markdown-preview-view p {
+    font-weight: var(--font-normal);
 }
 
 .list-bullet {
@@ -277,9 +310,18 @@ hr {
     }
 }
 
-strong,
-b,
-.cm-strong {
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+body:not(.normal-links) strong,
+body:not(.normal-links) b,
+body:not(.normal-links) .cm-strong {
     color: var(--text-extreme);   
 }
 
@@ -359,7 +401,7 @@ body.button-close-left .mod-root .workspace-tab-header:hover .workspace-tab-head
 
 .nav-folder-title:hover,
 .nav-folder-title {
-    font-weight: 500 !important;
+    font-weight: var(--font-bold) !important;
 }
 
 .tree-item-self.is-active.has-focus {
@@ -443,6 +485,10 @@ body:not(.is-phone) .prompt {
 .nav-files-container .tree-item:not(.is-collapsed) .nav-folder-children {
     isolation: isolate;
     animation: fade-in var(--anim-duration-fast) ease-in-out;
+}
+.nav-files-container .tree-item.is-collapsed .nav-folder-children {
+    isolation: isolate;
+    animation: fade-out var(--anim-duration-fast) ease-in-out;
 }
 
 .pdf-toolbar {
