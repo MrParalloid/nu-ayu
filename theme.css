@@ -98,6 +98,8 @@ body {
     --interactive-hover: var(--background-modifier-hover) !important;
     --link-decoration-hover: none;
     --link-decoration: none;
+    --link-color-hover: var(--link-color);
+    --link-external-color-hover: var(--link-external-color);
     --list-marker-color: var(--accent-color);
     --metadata-property-box-shadow-hover: none;
     --metadata-property-radius-focus: var(--radius-m);
