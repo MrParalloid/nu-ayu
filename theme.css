@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Nuayu for Obsidian
-Version 2026.0406
+Version 2026.0407
 @paralloid
 ───────────────────────────────────────*/
 /* @settings
@@ -113,6 +113,9 @@ body {
     --h4-color: var(--text-extreme);
     --h5-color: var(--text-extreme);
     --h6-color: var(--text-extreme);
+    --anim-fast: 160ms;
+    --anim-medium: 320ms;
+    --anim-slow: 640ms;
 }
 
 .thin-headers {
@@ -185,7 +188,7 @@ body.is-tablet {
 }
 
 .markdown-source-view.mod-cm6 .cm-line:hover .cm-fold-indicator .collapse-indicator, .markdown-source-view.mod-cm6 .cm-fold-indicator.is-collapsed .collapse-indicator {
-    animation: fade-in 400ms ease-out;
+    animation: fade-in var(--anim-medium) ease-out;
 }
 
 s,
@@ -198,7 +201,7 @@ del,
 .is-tablet {--nav-item-size: 1.1em}
 
 .cm-formatting {
-    animation: fade-in 200ms ease-out;
+    animation: fade-in var(--anim-medium) ease-out;
 }
 
 hr {
@@ -211,7 +214,7 @@ hr {
 
 .search-result-file-match:hover .search-result-file-match-replace-button,
 .tooltip {
-    animation: fade-in 200ms forwards ease-in-out !important;
+    animation: fade-in var(--anim-fast) forwards ease-in-out !important;
 }
 
 .status-bar {
@@ -305,7 +308,7 @@ body.button-close-left .workspace-tabs .workspace-tab-header-inner-icon {
 }
 
 body.button-close-left .workspace-tabs .workspace-tab-header-inner {
-    transition: display 0.3s linear;
+    transition: display var(--anim-medium) linear;
 }
 
 body.button-close-left .mod-root .workspace-tab-header-inner-close-button {
@@ -318,7 +321,7 @@ body.button-close-left .mod-root .workspace-tab-header:not(.is-active) .workspac
 
 body.button-close-left .mod-root .workspace-tab-header:hover .workspace-tab-header-inner-close-button {
     color: var(--text-muted);
-    transition: color 0.2s ease-out;
+    transition: color var(--anim-fast) ease-out;
 }
 
 .workspace .mod-root .workspace-tab-header-inner::after {
@@ -326,7 +329,7 @@ body.button-close-left .mod-root .workspace-tab-header:hover .workspace-tab-head
 }
 
 .workspace-tab-header-inner-close-button {
-    animation: fade-in 0.2s ease-out;
+    animation: fade-in var(--anim-fast) ease-out;
 }
 
 .workspace .mod-root {
@@ -340,7 +343,7 @@ body.button-close-left .mod-root .workspace-tab-header:hover .workspace-tab-head
 .accent-folders .nav-folder-title:hover,
 .accent-folders .nav-folder-title {
     color: var(--color-accent) !important;
-    font-weight: 550 !important;
+    font-weight: 500 !important;
 }
 
 .tree-item-self.is-active.has-focus {
@@ -348,14 +351,6 @@ body.button-close-left .mod-root .workspace-tab-header:hover .workspace-tab-head
     box-shadow: none !important;
     background-color: var(--interactive-hover) !important;
 }
-
-/* .theme-dark .tree-item-self.is-active.has-focus {
-    background-color: var(--color-accent) !important;
-}
-
-.theme-light .tree-item-self.is-active.has-focus {
-    background-color: var(--interactive-hover) !important;
-} */
 
 .nav-buttons-container .nav-action-button.is-active,
 .nav-buttons-container .clickable-icon.is-active {
@@ -367,7 +362,7 @@ body.button-close-left .mod-root .workspace-tab-header:hover .workspace-tab-head
 }
 
 body:not(.is-phone) .prompt {
-    animation: fade-in-prompt 0.15s ease-out !important;
+    animation: fade-in-prompt var(--anim-fast) ease-out !important;
 }
 
 .dataview.task-list-item:hover,
@@ -375,7 +370,7 @@ body:not(.is-phone) .prompt {
 .dataview {
     transition: none !important;
     box-shadow: none !important;
-    animation: fade-in 0.2s linear;
+    animation: fade-in var(--anim-fast) linear;
     background-color: transparent;
 }
 
@@ -414,28 +409,28 @@ body:not(.is-phone) .prompt {
 
 .nav-files-container .tree-item:not(.is-collapsed) .nav-folder-children {
     isolation: isolate;
-    animation: fade-in 0.3s ease-in-out;
+    animation: fade-in var(--anim-fast) ease-in-out;
 }
 
 .pdf-toolbar {
     opacity: 0;
-    animation: fade-in 0.3s ease-out forwards;
-    animation-delay: 0.15s;
+    animation: fade-in var(--anim-medium) ease-out forwards;
+    animation-delay: var(--anim-fast);
 }
 
 .pdf-container {
     opacity: 0;
-    animation: fade-in 0.3s ease-out forwards;
-    animation-delay: 0.3s;
+    animation: fade-in var(--anim-medium) ease-out forwards;
+    animation-delay: var(--anim-fast);
 }
 
 body:not(.is-mobile) .internal-embed {
-    animation: fade-in 0.3s ease-out !important;
+    animation: fade-in var(--anim-medium) ease-out !important;
     animation-delay: 0.1s;
 }
 
 body:not(.is-mobile) .ddc_ink_embed-block {
-    animation: fade-in 0.2s ease-out forwards;
+    animation: fade-in var(--anim-fast) ease-out forwards;
     animation-delay: 0.1s;
 }
 
