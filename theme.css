@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Nuayu for Obsidian
-Version 2026.0408
+Version 2026.0409
 @paralloid
 ───────────────────────────────────────*/
 /* @settings
@@ -50,8 +50,8 @@ settings:
 @charset "UTF-8";
 body {
     --accent-h: 25 !important;
-    --accent-l: 46% !important;
     --accent-s: 100% !important;
+    --accent-l: 46% !important;
     --anim-duration-fast: 180ms;
     --anim-duration-moderate: 320ms;
     --anim-duration-none: 0;
@@ -62,6 +62,10 @@ body {
     --anim-motion-smooth: cubic-bezier(0.48, 0.2, 0.5, 1);
     --anim-motion-swing: cubic-bezier(0.22, 0.82, 0.49, 1);
     --background-modifier-hover: var(--text-selection);
+    --bases-cards-radius: var(--radius-s);
+    --bases-cards-shadow-hover: var(--shadow-s);
+    --bases-cards-shadow: var(--shadow-s);
+    --bold-modifier: 250;
     --callout-bug: 215,59,11;
     --callout-default: 95,95,143;
     --callout-error: 215,59,11;
@@ -92,22 +96,21 @@ body {
     --divider-color: transparent !important;
     --dropdown-background: var(--background-secondary-alt) !important;
     --embed-block-shadow-hover: none;
-    --font-normal: 350;
-    --bold-modifier: 250;
     --font-bold: calc(var(--font-normal) + var(--bold-modifier));
-    --h1-color: var(--text-extreme);
+    --font-normal: 350;
+    /* --h1-color: var(--text-extreme); */
     --h1-weight: 500;
-    --h2-color: var(--text-extreme);
+    /* --h2-color: var(--text-extreme); */
     --h2-weight: 500;
-    --h3-color: var(--text-extreme);
+    /* --h3-color: var(--text-extreme); */
     --h3-weight: 500;
-    --h4-color: var(--text-extreme);
+    /* --h4-color: var(--text-extreme); */
     --h4-size: 1em;
     --h4-weight: 500;
-    --h5-color: var(--text-extreme);
+    /* --h5-color: var(--text-extreme); */
     --h5-size: 1em;
     --h5-weight: 500;
-    --h6-color: var(--text-extreme);
+    /* --h6-color: var(--text-extreme); */
     --h6-size: 1em;
     --h6-weight: 300;
     --hr-thickness: 1px;
@@ -115,12 +118,15 @@ body {
     --input-shadow-hover: none !important;
     --input-shadow: var(--shadow-s) !important;
     --interactive-hover: var(--background-modifier-hover) !important;
+    --link-color-hover: var(--link-color);
     --link-decoration-hover: none;
     --link-decoration: none;
-    --link-color-hover: var(--link-color);
     --link-external-color-hover: var(--link-external-color);
-    --list-marker-color: var(--accent-color);
     --link-weight: var(--font-normal);
+    --list-marker-color: var(--accent-color);
+    --metadata-border-radius: var(--radius-m);
+    --metadata-background: var(--background-primary-alt);
+    --metadata-padding: 5px 8px 0px;
     --metadata-property-box-shadow-hover: none;
     --metadata-property-radius-focus: var(--radius-m);
     --metadata-property-radius-hover: var(--radius-m);
@@ -136,9 +142,9 @@ body {
     --radius-m: 18px;
     --radius-s: 12px;
     --setting-items-background: none;
-    --shadow-s: 0 0 8px rgba(0,0,0,var(--shadow-opacity)) !important;
-    --shadow-m: 0 0 15px rgba(0,0,0,var(--shadow-opacity)) !important;
     --shadow-l: 0 0 25px rgba(0,0,0,var(--shadow-opacity)) !important;
+    --shadow-m: 0 0 15px rgba(0,0,0,var(--shadow-opacity)) !important;
+    --shadow-s: 0 0 8px rgba(0,0,0,var(--shadow-opacity)) !important;
     --tab-curve: 0px;
     --tab-radius-active: 12px 12px 0 0;
     --table-border-color: var(--background-secondary-alt);
@@ -146,10 +152,7 @@ body {
     --titlebar-background-focused: var(--background-secondary);
     --titlebar-background: var(--background-secondary);
     --workspace-background-translucent: rgba(var(--mono-rgb-0), 0.2);
-    --bases-cards-background: var(--background-primary);
-    --bases-cards-shadow: var(--shadow-s);
-    --bases-cards-shadow-hover: var(--shadow-s);
-    var(--divider-width-hover): 5px
+    var(--divider-width-hover): 5px;
 }
 
 .workspace-leaf-resize-handle {
@@ -167,22 +170,10 @@ body {
     --link-weight: var(--font-bold);
 }
 
-.thin-headers {
-    --h1-weight: 350;
-    --h2-weight: 250;
-    --h3-weight: 250;
-    --h4-weight: 250;
-    --h5-weight: 250;
-    --h6-weight: 150;
-}
-
-.HyperMD-header-4, .inline-title h4, .HyperMD-list-line .cm-header-4, h4, .markdown-rendered h4 {
-    border-bottom: 1px solid var(--background-modifier-border);
-}
-
 .theme-dark {
     --accent-color: #e96100 !important;
     --color-accent: #e96100 !important;
+    --bases-cards-background: var(--background-primary-alt);
     --color-base-30: var(--background-secondary-alt);
     --color-base-35: var(--background-secondary-alt);
     --interactive-accent: #e96100 !important;
@@ -203,7 +194,7 @@ body {
 
 .is-mobile.mobile-full-black.theme-dark {
     --background-primary: #000;
-    --background-primary-alt: #000;
+    --background-primary-alt: #111;
     --background-secondary: #19181f;
     --background-secondary-alt: #272530;
 }
@@ -211,6 +202,7 @@ body {
 .theme-light {
     --accent-color: #e96100 !important;
     --color-accent: #e96100 !important;
+    --bases-cards-background: var(--background-primary);
     --background-primary-alt: #f2f2f2;
     --background-primary: #fafafa;
     --background-secondary-alt: #e3e3e1;
@@ -222,6 +214,19 @@ body {
     --text-highlight-bg: rgba(180,255,100,0.5);
     --text-muted: #9593a7;
     --text-normal: #6b6884;
+}
+
+.thin-headers {
+    --h1-weight: 350;
+    --h2-weight: 250;
+    --h3-weight: 250;
+    --h4-weight: 250;
+    --h5-weight: 250;
+    --h6-weight: 150;
+}
+
+.HyperMD-header-4, .inline-title h4, .HyperMD-list-line .cm-header-4, h4, .markdown-rendered h4 {
+    border-bottom: 1px solid var(--background-modifier-border);
 }
 
 body.is-phone {
@@ -515,6 +520,15 @@ body:not(.is-phone) .prompt {
     background-color: transparent;
 }
 
+.metadata-properties-heading .collapse-indicator {
+    display: none;
+}
+
+.metadata-properties-heading:hover .metadata-properties-title {
+    color: var(--text-extreme) !important;
+    transition: color 100ms linear;
+}
+
 /* SMOOTH FADE-INS CONTENT */
 
 .nav-files-container .tree-item:not(.is-collapsed) .nav-folder-children {
@@ -532,15 +546,14 @@ body:not(.is-phone) .prompt {
     animation-delay: var(--anim-duration-fast);
 }
 
+.image-embed {
+    animation: fade-in var(--anim-duration-moderate) ease-out forwards;
+}
+
 .pdf-container {
     opacity: 0;
     animation: fade-in var(--anim-duration-moderate) ease-out forwards;
     animation-delay: var(--anim-duration-fast);
-}
-
-body:not(.is-mobile) .internal-embed {
-    animation: fade-in var(--anim-duration-moderate) ease-out !important;
-    animation-delay: 0.1s;
 }
 
 body:not(.is-mobile) .ddc_ink_embed-block {
