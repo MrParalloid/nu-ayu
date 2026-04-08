@@ -14,16 +14,23 @@ The approach was "future-proof changes" — only where it matters for removing d
 - Light & Dark modes
 - Super clean minimal look
 - Removed most of the borders, hover effects, highlights on hover, unexpected box-shadows, and other stuff that contributes to distraction
-- Very nice looking Dark Mode crafted from scratch with full black backgrounds option for mobile devices
+- Very nice looking Dark Mode crafted from scratch with optional full black backgrounds option for mobile devices
 - Special attention to mobile devices – bigger tap areas, file tree, reduced animations, and more
 - Full size sidebars on phones
 - Meaningful padding for Bases embeds on phone screens
 - Custom colors for Callouts
 - Custom colors for Code Blocks
+- Some love for Bases Cards appearance
 - Dataview embeds and task lists now look much more "native"
 - Smooth fade-ins for the embedded content 
 - Smooth appearance for the Markdown syntax
-- Configurable Tab Close button on the left
+- Style Settings support:
+  - **Tab Close button on the left** – feel native for macOS and iPadOS 
+  - **Thin Headers** for cleaner look
+  - **Accent Folders** adds orange accent for visual hierarchy
+  - **Removing Labels** on Bases Cards
+  - **Clean links** – removing accents for notes heavy on internal links
+  - **Full black backgrounds** option for mobile devices
 
 As a result you have much more fluid, cohesive, and less overwhelming experience, with less distractions and more space for meaningful work.
 
