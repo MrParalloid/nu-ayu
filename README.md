@@ -25,7 +25,7 @@ The approach was "future-proof changes" — only where it matters for removing d
 - Smooth fade-ins for the embedded content 
 - Smooth appearance for the Markdown syntax
 - Style Settings support:
-  - **Tab Close button on the left** – feel native for macOS and iPadOS 
+  - **Tab Close button on the left** – native feel for macOS and iPadOS 
   - **Thin Headers** for cleaner look
   - **Accent Folders** adds orange accent for visual hierarchy
   - **Removing Labels** on Bases Cards
