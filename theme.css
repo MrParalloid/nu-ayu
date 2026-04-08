@@ -412,10 +412,10 @@ body.button-close-left .mod-root .workspace-tab-header:hover .workspace-tab-head
     transition: color var(--anim-duration-fast) ease-out;
 }
 
-button:hover {
+body:not(.is-mobile) button:hover {
     background-color: var(--interactive-normal);
 }
-button:active {
+body:not(.is-mobile) button:active {
     background-color: var(--interactive-hover);
 }
 
