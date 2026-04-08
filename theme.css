@@ -39,6 +39,12 @@ settings:
         description: This gives calmer look to notes, especially with big amounts of links in them.
         type: class-toggle
         default: false
+    -
+        id: hide-card-labels
+        title: Hide Bases Lables
+        description: Remove property labels from Bases Cards view.
+        type: class-toggle
+        default: false
 */
 
 @charset "UTF-8";
@@ -140,6 +146,20 @@ body {
     --titlebar-background-focused: var(--background-secondary);
     --titlebar-background: var(--background-secondary);
     --workspace-background-translucent: rgba(var(--mono-rgb-0), 0.2);
+    --bases-cards-background: var(--background-primary);
+    --bases-cards-shadow: var(--shadow-s);
+    --bases-cards-shadow-hover: var(--shadow-s);
+    var(--divider-width-hover): 5px
+}
+
+.workspace-leaf-resize-handle {
+    --divider-width: 5px !important;
+}
+
+.workspace-tabs.mod-top .bases-header {
+    box-shadow: var(--shadow-s);
+    z-index: 1;
+    border: none;
 }
 
 .normal-links {
@@ -196,7 +216,7 @@ body {
     --background-secondary-alt: #e3e3e1;
     --background-secondary: #f4f4f4;
     --interactive-accent: #e96100 !important;
-    --shadow-opacity: 0.12;
+    --shadow-opacity: 0.1;
     --text-extreme: #5e5b74;
     --text-faint: #a8a5bb;
     --text-highlight-bg: rgba(180,255,100,0.5);
@@ -325,8 +345,13 @@ body:not(.normal-links) .cm-strong {
     color: var(--text-extreme);   
 }
 
-.workspace-tab-header.tappable.is-active.mod-active {
+.workspace-tab-header.tappable:not(.is-active) {
+    padding-top: 3px !important;
+}
+
+.workspace-tab-header.tappable.is-active {
     box-shadow: var(--shadow-s);
+    margin-top: 2px;
 }
 
 .workspace-tab-header-container,
@@ -419,6 +444,7 @@ body.button-close-left .mod-root .workspace-tab-header:hover .workspace-tab-head
     padding: var(--size-4-2) var(--size-4-4) var(--size-4-8);
 }
 
+
 body:not(.is-phone) .prompt {
     animation: fade-in-prompt var(--anim-duration-fast) ease-out !important;
     box-shadow: var(--shadow-l);
@@ -461,6 +487,10 @@ body:not(.is-phone) .prompt {
 .bases-table-cell.bases-rendered-value,
 .bases-list-item .list-bullet + .bases-rendered-value {
     font-weight: var(--link-weight);
+}
+
+.hide-card-labels .bases-cards-label {
+    display: none;
 }
 
 .is-phone .menu .suggestion-group .suggestion-item:not(.is-label),
