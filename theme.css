@@ -156,7 +156,7 @@ body {
     --h6-weight: 150;
 }
 
-h4, .markdown-rendered h4 {
+.HyperMD-header-4, .inline-title h4, .HyperMD-list-line .cm-header-4, h4, .markdown-rendered h4 {
     border-bottom: 1px solid var(--background-modifier-border);
 }
 
@@ -456,6 +456,11 @@ body:not(.is-phone) .prompt {
 .is-phone .bases-embed, 
 .is-phone .cm-lang-base {
     padding-left: 20px;
+}
+
+.bases-table-cell.bases-rendered-value,
+.bases-list-item .list-bullet + .bases-rendered-value {
+    font-weight: var(--link-weight);
 }
 
 .is-phone .menu .suggestion-group .suggestion-item:not(.is-label),
