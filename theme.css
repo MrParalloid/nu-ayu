@@ -524,7 +524,11 @@ body:not(.is-phone) .prompt {
     display: none;
 }
 
-.metadata-properties-heading:hover .metadata-properties-title {
+body.is-mobile .metadata-container {
+    background-color: transparent;
+}
+
+body:not(.is-mobile) .metadata-properties-heading:hover .metadata-properties-title {
     color: var(--text-extreme) !important;
     transition: color 100ms linear;
 }
