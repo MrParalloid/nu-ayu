@@ -21,7 +21,7 @@ The approach was "future-proof changes" — only where it matters for removing d
 - Custom colors for Callouts
 - Custom colors for Code Blocks
 - Some love for Bases Cards appearance
-- Dataview embeds and task lists now look much more "native"
+- Dataview embeds and task lists now look much more "native" thanks to removing "foreign" animations and box-shadows effects
 - Smooth fade-ins for the embedded content 
 - Smooth appearance for the Markdown syntax
 - Style Settings support:
