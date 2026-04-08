@@ -95,6 +95,7 @@ body {
     --code-value: #a86aba;
     --divider-color: transparent !important;
     --dropdown-background: var(--background-secondary-alt) !important;
+    --dropdown-background-hover: var(--dropdown-background) !important;
     --embed-block-shadow-hover: none;
     --font-bold: calc(var(--font-normal) + var(--bold-modifier));
     --font-normal: 350;
@@ -115,7 +116,7 @@ body {
     --h6-weight: 300;
     --hr-thickness: 1px;
     --input-radius: var(--radius-m);
-    --input-shadow-hover: none !important;
+    --input-shadow-hover: var(--shadow-s) !important;
     --input-shadow: var(--shadow-s) !important;
     --interactive-hover: var(--background-modifier-hover) !important;
     --link-color-hover: var(--link-color);
@@ -126,7 +127,10 @@ body {
     --list-marker-color: var(--accent-color);
     --metadata-border-radius: var(--radius-m);
     --metadata-background: var(--background-primary-alt);
+    --metadata-divider-color: transparent;
+    --metadata-divider-color-hover: transparent;
     --metadata-padding: 5px 8px 0px;
+    --metadata-property-box-shadow: none;
     --metadata-property-box-shadow-hover: none;
     --metadata-property-radius-focus: var(--radius-m);
     --metadata-property-radius-hover: var(--radius-m);
@@ -408,6 +412,13 @@ body.button-close-left .mod-root .workspace-tab-header:hover .workspace-tab-head
     transition: color var(--anim-duration-fast) ease-out;
 }
 
+button:hover {
+    background-color: var(--interactive-normal);
+}
+button:active {
+    background-color: var(--interactive-hover);
+}
+
 .workspace .mod-root .workspace-tab-header-inner::after {
     background: none;
 }
@@ -522,6 +533,10 @@ body:not(.is-phone) .prompt {
 
 .metadata-properties-heading .collapse-indicator {
     display: none;
+}
+
+.metadata-add-button {
+    background-color: transparent;
 }
 
 body.is-mobile .metadata-container {
