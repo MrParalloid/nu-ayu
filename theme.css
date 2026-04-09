@@ -513,6 +513,12 @@ body:not(.is-phone) .prompt {
     display: none;
 }
 
+.backlink-pane {
+    --text-faint: var(--text-normal);
+    --text-muted: var(--text-normal);
+    --nav-item-color-hover: var(--text-normal);
+}
+
 .is-phone .menu .suggestion-group .suggestion-item:not(.is-label),
 .is-phone .menu-item:not(.is-label) {
     background-color: transparent;
