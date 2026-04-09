@@ -127,8 +127,8 @@ body {
     --list-marker-color: var(--accent-color);
     --metadata-border-radius: var(--radius-m);
     --metadata-background: var(--background-primary-alt);
-    --metadata-divider-color: transparent;
-    --metadata-divider-color-hover: transparent;
+    --metadata-divider-color: var(--text-faint);
+    --metadata-divider-color-hover: var(--text-faint) !important;
     --metadata-padding: 5px 8px 0px;
     --metadata-property-box-shadow: none;
     --metadata-property-box-shadow-hover: none;
@@ -172,6 +172,10 @@ body {
 .normal-links {
     --link-color: var(--text-extreme);
     --link-weight: var(--font-bold);
+}
+
+body:not(.is-phone) .base-toolbar-sort-item, body:not(.is-phone) .base-toolbar-groupby-item {
+    --metadata-property-box-shadow: none;
 }
 
 .theme-dark {
@@ -369,7 +373,7 @@ body:not(.normal-links) .cm-strong {
 }
 
 body:not(.is-phone) .vertical-tab-nav-item.is-active {
-    background-color: var(--text-selection);
+    background-color: var(--nav-item-background-active);
 }
 
 .horizontal-tab-nav-item:hover .vertical-tab-nav-item-icon,
@@ -412,12 +416,12 @@ body.button-close-left .mod-root .workspace-tab-header:hover .workspace-tab-head
     transition: color var(--anim-duration-fast) ease-out;
 }
 
-body:not(.is-mobile) button:hover {
-    background-color: var(--interactive-normal);
-}
-body:not(.is-mobile) button:active {
+/* body:not(.is-mobile) button:hover {
     background-color: var(--interactive-hover);
 }
+body:not(.is-mobile) button:active {
+    background-color: var(--interactive-accent-hover);
+} */
 
 .workspace .mod-root .workspace-tab-header-inner::after {
     background: none;
@@ -535,6 +539,8 @@ body:not(.is-phone) .prompt {
     display: none;
 }
 
+.text-icon-button.has-active-menu,
+.text-icon-button:hover,
 .metadata-add-button {
     background-color: transparent;
 }
