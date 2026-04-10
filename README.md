@@ -37,7 +37,7 @@ As a result you have much more fluid, cohesive, and less overwhelming experience
 <a href='https://ko-fi.com/G2G21XAEJ9' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 ## Manual Installation
-Note: for now this theme is still udner review to get to the official catalog. Once it is there – you'll be able to find it through standard Obsidian theme repo.
+Note: for now this theme is still under review to get to the official catalog. Once it is there – you'll be able to find it through standard Obsidian theme repo.
 
 1. Download the `theme.css` and `manifest.json` files from the this GitHub page, or Download the [latest release](https://github.com/MrParalloid/nu-ayu/releases) archive.
 2. Open your Obsidian vault on your computer.
