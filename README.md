@@ -1,7 +1,7 @@
 # Nu Ayu Theme for Obsidian
 Latest version: **2026.0409**
 
-A minimal theme built around restraint. Soft, rounded surfaces, transparent dividers, and a deliberately muted text palette keep the interface quiet so your notes stay loud.
+A minimal theme built around restraint. Soft, rounded surfaces, transparent dividers, and a deliberately muted text palette keep the interface quiet so your notes stay loud. Removed unnecessary hover effects, highlights, and other things that distract you from what's important – your thinking process.
 
 Light mode draws from the Ayu color tradition: warm off-whites and purple-grey text that reduce eye strain without feeling washed out. 
 Dark mode is an original: deep violet-tinged backgrounds with a consistent warm orange accent throughout.
