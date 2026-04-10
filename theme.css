@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Nuayu for Obsidian
-Version 2026.0409
+Version 2026.0411
 @paralloid
 ───────────────────────────────────────*/
 /* @settings
@@ -41,7 +41,7 @@ settings:
         default: false
     -
         id: hide-card-labels
-        title: Hide Bases Lables
+        title: Hide Bases Labels
         description: Remove property labels from Bases Cards view.
         type: class-toggle
         default: false
@@ -174,6 +174,18 @@ body {
     --link-weight: var(--font-bold);
 }
 
+.normal-links .cm-s-obsidian span.cm-url {
+    --link-weight: var(--font-normal);
+}
+
+.tree-item-self.bookmark .tree-item-icon {
+    color: var(--color-accent);
+}
+
+.tree-item-self.bookmark {
+    font-size: var(--nav-item-size);
+}
+
 body:not(.is-phone) .base-toolbar-sort-item, body:not(.is-phone) .base-toolbar-groupby-item {
     --metadata-property-box-shadow: none;
 }
@@ -303,6 +315,19 @@ hr {
     max-width: min(60rem, 90vw);
     gap: 10px;
     border-radius: var(--radius-l);
+    transition: transform var(--anim-duration-fast) ease-out;
+}
+
+body:has(.workspace.is-left-sidedock-open) .status-bar {
+    transform: translateX(calc(-50% + (var(--left-sidebar-width, 250px) / 2)));
+}
+
+body:has(.workspace.is-right-sidedock-open) .status-bar {
+    transform: translateX(calc(-50% - (var(--right-sidebar-width, 320px) / 2)));
+}
+
+body:has(.workspace.is-left-sidedock-open):has(.workspace.is-right-sidedock-open) .status-bar {
+    transform: translateX(calc(-50% + (var(--left-sidebar-width, 250px) / 2) - (var(--right-sidebar-width, 320px) / 2)));
 }
 
 .clickable-icon:hover {
