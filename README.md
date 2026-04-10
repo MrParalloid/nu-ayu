@@ -6,7 +6,7 @@ A minimal theme built around restraint. Soft, rounded surfaces, transparent divi
 Light mode draws from the Ayu color tradition: warm off-whites and purple-grey text that reduce eye strain without feeling washed out. 
 Dark mode is an original: deep violet-tinged backgrounds with a consistent warm orange accent throughout.
 
-The approach was "future-proof changes" — only where it matters for removing distractions and smoothing experience while keeping longevity in mind. This keeps the theme stable across Obsidian updates and avoids the visual debt.
+The approach was "future-proof changes" — change only where it matters for removing distractions, improving focus, and smoothing experience – all while keeping longevity in mind. This keeps the theme stable across Obsidian updates and avoids the visual debt.
 
 ![](screenshots/ayu-screenshot.png)
 
