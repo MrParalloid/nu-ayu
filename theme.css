@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Nuayu for Obsidian
-Version 2026.0411
+Version 2026.0413
 @paralloid
 ───────────────────────────────────────*/
 /* @settings
@@ -125,16 +125,16 @@ body {
     --link-external-color-hover: var(--link-external-color);
     --link-weight: var(--font-normal);
     --list-marker-color: var(--accent-color);
-    --metadata-border-radius: var(--radius-m);
     --metadata-background: var(--background-primary-alt);
     --metadata-divider-color: var(--text-faint);
     --metadata-divider-color-hover: var(--text-faint) !important;
     --metadata-padding: 5px 8px 0px;
     --metadata-property-box-shadow: none;
     --metadata-property-box-shadow-hover: none;
-    --metadata-property-radius-focus: var(--radius-m);
-    --metadata-property-radius-hover: var(--radius-m);
-    --metadata-property-radius: var(--radius-m);
+    --metadata-border-radius: var(--radius-m);
+    --metadata-property-radius-focus: var(--metadata-border-radius);
+    --metadata-property-radius-hover: var(--metadata-border-radius);
+    --metadata-property-radius: var(--metadata-border-radius);
     --nav-item-background-active: rgba(93,91,116,0.13);
     --nav-item-background-hover: transparent;
     --nav-item-color-active: var(--text-extreme);
@@ -206,15 +206,16 @@ body:not(.is-phone) .base-toolbar-sort-item, body:not(.is-phone) .base-toolbar-g
 
 .theme-dark {
     --background-primary: #1f1f27;
-    --background-primary-alt: #1c1c24;
+    --background-primary-alt: #1b1b22;
     --background-secondary: #19181f;
     --background-secondary-alt: #353342;
+    --background-extreme: var(--background-primary-alt);
     --text-highlight-bg: rgba(30,235,100,0.3);
 }
 
 .is-mobile.mobile-full-black.theme-dark {
     --background-primary: #000;
-    --background-primary-alt: #111;
+    --background-primary-alt: #101014;
     --background-secondary: #19181f;
     --background-secondary-alt: #272530;
 }
@@ -227,6 +228,7 @@ body:not(.is-phone) .base-toolbar-sort-item, body:not(.is-phone) .base-toolbar-g
     --background-primary: #fafafa;
     --background-secondary-alt: #e3e3e1;
     --background-secondary: #f4f4f4;
+    --background-extreme: var(--background-primary-alt);
     --interactive-accent: #e96100 !important;
     --shadow-opacity: 0.1;
     --text-extreme: #5e5b74;
@@ -336,6 +338,18 @@ body:has(.workspace.is-left-sidedock-open):has(.workspace.is-right-sidedock-open
 
 .markdown-embed-title {
   display: none;
+}
+
+.markdown-embed {
+  border-left: none;
+  --embed-padding: 8px;
+  background-color: var(--background-extreme);
+  border-radius: var(--metadata-border-radius);
+}
+
+.markdown-embed-link:hover,
+.file-embed-link:hover {
+    background: transparent;
 }
 
 .inline-title { 
