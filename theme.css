@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Nuayu for Obsidian
-Version 2026.0413
+Version 2026.0425
 @paralloid
 ───────────────────────────────────────*/
 /* @settings
@@ -197,7 +197,7 @@ body:not(.is-phone) .base-toolbar-sort-item, body:not(.is-phone) .base-toolbar-g
     --color-base-30: var(--background-secondary-alt);
     --color-base-35: var(--background-secondary-alt);
     --interactive-accent: #e96100 !important;
-    --shadow-opacity: 0.4;
+    --shadow-opacity: 0.5;
     --text-extreme: #fff;
     --text-faint: #777992;
     --text-muted: #a0a2b6;
@@ -265,8 +265,29 @@ body.is-phone {
     --touch-background: var(--background-primary) !important;
 }
 
-body.is-tablet {
+.is-tablet:not(.zenmode-active) {
     --titlebar-background: var(--background-secondary) !important;
+}
+
+.is-tablet.zenmode-active {
+    --titlebar-background: var(--background-primary) !important;
+}
+
+.zenmode-button.zenmode-button-moved-up {
+    bottom: 10px;
+}
+
+.is-tablet .zenmode-button {
+    top: 36px;
+    right: 18px;
+}
+
+.workspace-drawer-tab-options:not(.is-collapsed) .workspace-drawer-tab-options-list .workspace-tab-header {
+    border-radius: var(--radius-l);
+}
+
+.is-tablet .workspace-drawer-tab-options:not(.has-swipe) .workspace-tab-header.is-active .workspace-tab-header-inner {
+    --icon-color: var(--accent-color);
 }
 
 .markdown-source-view.mod-cm6 .cm-line:hover .cm-fold-indicator .collapse-indicator, .markdown-source-view.mod-cm6 .cm-fold-indicator.is-collapsed .collapse-indicator {
