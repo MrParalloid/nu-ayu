@@ -286,7 +286,7 @@ body.is-phone {
     border-radius: var(--radius-l);
 }
 
-.is-tablet .workspace-drawer-tab-options:not(.has-swipe) .workspace-tab-header.is-active .workspace-tab-header-inner {
+.is-mobile .workspace-drawer-tab-options:not(.has-swipe) .workspace-tab-header.is-active .workspace-tab-header-inner {
     --icon-color: var(--accent-color);
 }
 
