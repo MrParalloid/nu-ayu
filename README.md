@@ -1,5 +1,5 @@
 # Nu Ayu Theme for Obsidian
-Latest version: **2026.0425**
+Latest version: **2026.0524**
 
 A minimal theme built around restraint. Soft, rounded surfaces, transparent dividers, and a deliberately muted text palette keep the interface quiet so your notes stay loud. Removed unnecessary hover effects, highlights, and other things that distract you from what's important – your thinking process.
 
