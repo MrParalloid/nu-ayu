@@ -1,7 +1,7 @@
 /*──────────────────────────────────────
 Nuayu for Obsidian
-Version 2026.0524
-@paralloid
+Version 2026.0618
+https://github.com/MrParalloid/nu-ayu/
 ───────────────────────────────────────*/
 /* @settings
 
@@ -44,7 +44,7 @@ settings:
         title: Hide Bases Labels
         description: Remove property labels from Bases Cards view.
         type: class-toggle
-        default: false
+        default: true
 */
 
 @charset "UTF-8";
@@ -231,7 +231,7 @@ body:not(.is-phone) .base-toolbar-sort-item, body:not(.is-phone) .base-toolbar-g
     --background-extreme: var(--background-primary-alt);
     --interactive-accent: #e96100 !important;
     --shadow-opacity: 0.1;
-    --text-extreme: #5e5b74;
+    --text-extreme: #464356;
     --text-faint: #a8a5bb;
     --text-highlight-bg: rgba(180,255,100,0.5);
     --text-muted: #9593a7;
@@ -290,8 +290,12 @@ body.is-phone {
     border-radius: var(--radius-l);
 }
 
-.is-tablet .workspace-drawer-tab-options:not(.has-swipe) .workspace-tab-header.is-active .workspace-tab-header-inner {
+.is-mobile .workspace-drawer-tab-options:not(.has-swipe) .workspace-tab-header.is-active .workspace-tab-header-inner {
     --icon-color: var(--accent-color);
+}
+
+.is-phone .workspace-drawer-tab-options-list {
+    padding-bottom: 60px;
 }
 
 .markdown-source-view.mod-cm6 .cm-line:hover .cm-fold-indicator .collapse-indicator, .markdown-source-view.mod-cm6 .cm-fold-indicator.is-collapsed .collapse-indicator {
@@ -528,6 +532,11 @@ body:not(.is-mobile) button:active {
     background-color: transparent;
 }
 
+.markdown-rendered button.copy-code-button:hover{
+    background-color: inherit;
+    color: var(--text-extreme);
+}
+
 .workspace-leaf-content[data-type=bookmarks] .view-content {
     padding: var(--size-4-2) var(--size-4-4) var(--size-4-8);
 }
@@ -712,4 +721,88 @@ body {
 
 .nn-navitem-icon svg {
     stroke-width: 2.1px !important;
+}
+
+/* TYPOGRAPHY UPDATE */
+
+body {
+    --bear-heading-top: 1.6em;
+    --bear-heading-bottom: 0.8em;
+    --bear-paragraph-gap: 1em;
+    --bear-list-item-gap: 0.3em;
+}
+
+/* ==========================================================
+   2. LIVE PREVIEW (EDITING MODE)
+   ========================================================== */
+
+/* Headings: Push text away from the bottom, and push away from text above */
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header {
+    padding-top: var(--bear-heading-top) !important;
+    padding-bottom: var(--bear-heading-bottom) !important;
+}
+
+/* Exception: Remove the top gap if the heading is the very first line of the note */
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-1 {
+    padding-top: 0 !important;
+} 
+
+/* Lists: Detect when a list starts immediately after normal text/heading */
+.markdown-source-view.mod-cm6 .cm-line:not(.HyperMD-list-line) + .cm-line.HyperMD-list-line {
+    padding-top: var(--bear-paragraph-gap) !important;
+}
+
+/* Lists: Detect when normal text starts immediately after a list */
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-list-line + .cm-line:not(.HyperMD-list-line):not(.hr) {
+    padding-top: var(--bear-paragraph-gap) !important;
+}
+
+/* Internal List Spacing: Keep list items relatively tight, like Bear */
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-list-line {
+    padding-bottom: var(--bear-list-item-gap) !important;
+}
+
+/* ==========================================================
+   3. READING VIEW
+   ========================================================== */
+
+/* Headings */
+.markdown-rendered h1,
+.markdown-rendered h2,
+.markdown-rendered h3,
+.markdown-rendered h4,
+.markdown-rendered h5,
+.markdown-rendered h6 {
+    margin-top: var(--bear-heading-top) !important;
+    margin-bottom: var(--bear-heading-bottom) !important;
+}
+
+/* Exception: First child top margin */
+.markdown-rendered > :first-child {
+    margin-top: 0 !important;
+}
+
+/* Containers: Paragraphs, Lists, Blockquotes */
+.markdown-rendered .el-p,
+.markdown-rendered .el-ul,
+.markdown-rendered .el-ol,
+.markdown-rendered .el-blockquote {
+    margin-bottom: var(--bear-paragraph-gap) !important;
+}
+
+/* Internal List Spacing */
+.markdown-rendered li {
+    margin-bottom: var(--bear-list-item-gap) !important;
+}
+
+.markdown-rendered li:last-child {
+    margin-bottom: 0 !important; /* Prevents double-gapping at the end of a list */
+}
+
+.markdown-rendered > .markdown-preview-section > .markdown-preview-pusher + div:not(.mod-ui) > :first-child, .markdown-rendered > .markdown-preview-section > .mod-ui + div:not(.mod-ui) > :first-child {
+    margin-top: 0 !important;
+}
+
+.cm-s-obsidian .cm-line.HyperMD-header + .cm-line:not(.HyperMD-header):not(:has(>br:only-child)) {
+    padding-top: var(--p-spacing-empty) !important;
 }
