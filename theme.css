@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Nuayu for Obsidian
-Version 1.6.18
+Version 1.6.28
 https://github.com/MrParalloid/nu-ayu/
 ───────────────────────────────────────*/
 /* @settings
@@ -66,20 +66,20 @@ body {
     --bases-cards-shadow-hover: var(--shadow-s);
     --bases-cards-shadow: var(--shadow-s);
     --bold-modifier: 250;
-    --callout-bug: 215,59,11;
-    --callout-default: 95,95,143;
-    --callout-error: 215,59,11;
-    --callout-example: 90,90,181;
-    --callout-fail: 215,59,11;
-    --callout-important: 102,176,163;
-    --callout-info: 55,108,160;
-    --callout-question: 188,82,30;
-    --callout-quote: 55,108,160;
-    --callout-success: 135,188,121;
-    --callout-summary: 102,176,163;
-    --callout-tip: 102,176,163;
-    --callout-todo: 55,108,160;
-    --callout-warning: 188,82,30;
+    --callout-bug: #d73b0b;
+    --callout-default: #5f5f8f;
+    --callout-error: #d73b0b;
+    --callout-example: #5a5ab5;
+    --callout-fail: #d73b0b;
+    --callout-important: #66b0a3;
+    --callout-info: #376ca0;
+    --callout-question: #bc521e;
+    --callout-quote: #376ca0;
+    --callout-success: #87bc79;
+    --callout-summary: #66b0a3;
+    --callout-tip: #66b0a3;
+    --callout-todo: #376ca0;
+    --callout-warning: #bc521e;
     --caret-color: var(--color-accent);
     --checklist-done-color: var(--text-faint);
     --checklist-done-decoration: none;
