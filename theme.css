@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Nuayu for Obsidian
-Version 1.6.28
+Version 1.7.2
 https://github.com/MrParalloid/nu-ayu/
 ───────────────────────────────────────*/
 /* @settings
@@ -724,85 +724,13 @@ body {
 }
 
 /* TYPOGRAPHY UPDATE */
-
 body {
-    --bear-heading-top: 1.6em;
-    --bear-heading-bottom: 0.8em;
-    --bear-paragraph-gap: 1em;
-    --bear-list-item-gap: 0.3em;
+    --p-spacing: 1em;
+    --heading-spacing: 1em;
 }
 
-/* ==========================================================
-   2. LIVE PREVIEW (EDITING MODE)
-   ========================================================== */
-
-/* Headings: Push text away from the bottom, and push away from text above */
-.markdown-source-view.mod-cm6 .cm-line.HyperMD-header {
-    padding-top: var(--bear-heading-top) !important;
-    padding-bottom: var(--bear-heading-bottom) !important;
-}
-
-/* Exception: Remove the top gap if the heading is the very first line of the note */
-.markdown-source-view.mod-cm6 .cm-line.HyperMD-header-1 {
-    padding-top: 0 !important;
-} 
-
-/* Lists: Detect when a list starts immediately after normal text/heading */
-.markdown-source-view.mod-cm6 .cm-line:not(.HyperMD-list-line) + .cm-line.HyperMD-list-line {
-    padding-top: var(--bear-paragraph-gap) !important;
-}
-
-/* Lists: Detect when normal text starts immediately after a list */
-.markdown-source-view.mod-cm6 .cm-line.HyperMD-list-line + .cm-line:not(.HyperMD-list-line):not(.hr) {
-    padding-top: var(--bear-paragraph-gap) !important;
-}
-
-/* Internal List Spacing: Keep list items relatively tight, like Bear */
-.markdown-source-view.mod-cm6 .cm-line.HyperMD-list-line {
-    padding-bottom: var(--bear-list-item-gap) !important;
-}
-
-/* ==========================================================
-   3. READING VIEW
-   ========================================================== */
-
-/* Headings */
-.markdown-rendered h1,
-.markdown-rendered h2,
-.markdown-rendered h3,
-.markdown-rendered h4,
-.markdown-rendered h5,
-.markdown-rendered h6 {
-    margin-top: var(--bear-heading-top) !important;
-    margin-bottom: var(--bear-heading-bottom) !important;
-}
-
-/* Exception: First child top margin */
-.markdown-rendered > :first-child {
-    margin-top: 0 !important;
-}
-
-/* Containers: Paragraphs, Lists, Blockquotes */
-.markdown-rendered .el-p,
-.markdown-rendered .el-ul,
-.markdown-rendered .el-ol,
-.markdown-rendered .el-blockquote {
-    margin-bottom: var(--bear-paragraph-gap) !important;
-}
-
-/* Internal List Spacing */
-.markdown-rendered li {
-    margin-bottom: var(--bear-list-item-gap) !important;
-}
-
-.markdown-rendered li:last-child {
-    margin-bottom: 0 !important; /* Prevents double-gapping at the end of a list */
-}
-
+.cm-s-obsidian .cm-line.HyperMD-header,
 .markdown-rendered > .markdown-preview-section > .markdown-preview-pusher + div:not(.mod-ui) > :first-child, .markdown-rendered > .markdown-preview-section > .mod-ui + div:not(.mod-ui) > :first-child {
-    margin-top: 0 !important;
-}
-
-.cm-s-obsidian .cm-line.HyperMD-header + .cm-line:not(.HyperMD-header):not(:has(>br:only-child)) {
-    padding-top: var(--p-spacing-empty) !important;
+    margin-top: 0;
+    padding-top: 0;
 }
