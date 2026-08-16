@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
-Nuayu for Obsidian
-Version 1.7.2
+Nu Ayu for Obsidian
+Version 1.7.3
 https://github.com/MrParalloid/nu-ayu/
 ───────────────────────────────────────*/
 /* @settings
@@ -156,7 +156,7 @@ body {
     --titlebar-background-focused: var(--background-secondary);
     --titlebar-background: var(--background-secondary);
     --workspace-background-translucent: rgba(var(--mono-rgb-0), 0.2);
-    var(--divider-width-hover): 5px;
+    --divider-width-hover: 5px;
 }
 
 .workspace-leaf-resize-handle {
@@ -231,7 +231,7 @@ body:not(.is-phone) .base-toolbar-sort-item, body:not(.is-phone) .base-toolbar-g
     --background-extreme: var(--background-primary-alt);
     --interactive-accent: #e96100 !important;
     --shadow-opacity: 0.1;
-    --text-extreme: #464356;
+    --text-extreme: #525065;
     --text-faint: #a8a5bb;
     --text-highlight-bg: rgba(180,255,100,0.5);
     --text-muted: #9593a7;
@@ -688,6 +688,7 @@ body {
     --nn-theme-list-bg: var(--background-secondary);
     --nn-selected-file-bg-color: var(--background-primary);
     --nn-theme-file-selected-bg: var(--background-primary);
+    --nn-theme-navitem-hover-bg: trasparent;
     --nn-file-item-border-radius: var(--radius-s);
     --nn-theme-file-border-radius: var(--radius-s);
     --nn-computed-file-selected-inactive-bg: var(--background-primary);
@@ -713,6 +714,21 @@ body {
     font-size: var(--tag-size);
 }
 
+.nn-resize-handle,
+.nn-resize-handle:hover {
+    width: var(--divider-width-hover)
+}
+
+.nn-shortcuts-resize-handle,
+.nn-shortcuts-resize-handle:hover {
+    height: var(--divider-width-hover)
+}
+
+.nn-shortcuts-resize-handle:hover,
+.nn-resize-handle:hover {
+    animation: fade-in 0.2s ease-out;
+}
+
 .nn-quick-actions-panel {
     border-radius: 12px;
     padding: 8px;
@@ -724,9 +740,10 @@ body {
 }
 
 /* TYPOGRAPHY UPDATE */
+
 body {
     --p-spacing: 1em;
-    --heading-spacing: 1em;
+    --heading-spacing: 2em;
 }
 
 .cm-s-obsidian .cm-line.HyperMD-header,
