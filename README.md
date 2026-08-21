@@ -1,6 +1,6 @@
 # Nu Ayu Theme for Obsidian
-Latest version: **1.7.3**
-Updated: **2026-08-16**
+Latest version: **1.7.4** — now with full Notebook Navigator styling
+Updated: **2026-08-21**
 
 A minimal theme built around restraint. Soft, rounded surfaces, transparent dividers, and a deliberately muted text palette keep the interface quiet so your notes stay loud. Removed unnecessary hover effects, highlights, and other things that distract you from what's important – your thinking process.
 
@@ -25,6 +25,7 @@ The approach was "future-proof changes" — change only where it matters for rem
 - Dataview embeds and task lists now look much more "native" thanks to removing "foreign" animations and box-shadows effects
 - Smooth fade-ins for the embedded content 
 - Smooth appearance for the Markdown syntax
+- Full Notebook Navigator styling to match overall aesthetics
 - Style Settings support:
   - **Tab Close button on the left** – native feel for macOS and iPadOS 
   - **Thin Headers** for cleaner look
