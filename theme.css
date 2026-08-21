@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Nu Ayu for Obsidian
-Version 1.7.3
+Version 1.7.4
 https://github.com/MrParalloid/nu-ayu/
 ───────────────────────────────────────*/
 /* @settings
@@ -157,6 +157,7 @@ body {
     --titlebar-background: var(--background-secondary);
     --workspace-background-translucent: rgba(var(--mono-rgb-0), 0.2);
     --divider-width-hover: 5px;
+    --raised-blur: blur(3px) saturate(1.5) brightness(1.15);
 }
 
 .workspace-leaf-resize-handle {
@@ -184,6 +185,10 @@ body {
 
 .tree-item-self.bookmark {
     font-size: var(--nav-item-size);
+}
+
+.is-mobile.is-floating-nav.is-ios .mod-raised:after {
+    opacity: 0.9;
 }
 
 body:not(.is-phone) .base-toolbar-sort-item, body:not(.is-phone) .base-toolbar-groupby-item {
@@ -684,15 +689,25 @@ body:not(.is-mobile) .ddc_ink_embed-block {
 
 /* Notebook Navigator */
 
-body {
-    --nn-theme-list-bg: var(--background-secondary);
-    --nn-selected-file-bg-color: var(--background-primary);
-    --nn-theme-file-selected-bg: var(--background-primary);
-    --nn-theme-navitem-hover-bg: trasparent;
-    --nn-file-item-border-radius: var(--radius-s);
-    --nn-theme-file-border-radius: var(--radius-s);
+body,
+.nn-split-container {
     --nn-computed-file-selected-inactive-bg: var(--background-primary);
+    --nn-file-item-border-radius: var(--radius-s);
+    --nn-ios-toolbar-glass-bg: var(--raised-background);
+    --nn-ios-toolbar-glass-shadow: var(--raised-shadow);
+    --nn-selected-file-bg-color: var(--background-primary);
+    --nn-selected-navitem-bg-color: var(--background-secondary-alt);
+    --nn-selected-navitem-name-color: var(--text-extreme);
+    --nn-theme-file-border-radius: var(--radius-s);
+    --nn-theme-file-selected-bg: var(--background-primary);
+    --nn-theme-header-button-active-bg: var(--background-secondary-alt);
+    --nn-theme-header-button-hover-bg: transparent;
+    --nn-theme-list-bg: var(--background-secondary);
+    --nn-theme-navitem-bg: var(--background-secondary-alt);
+    --nn-theme-navitem-border-radius: var(--radius-l);
+    --nn-theme-navitem-hover-bg: trasparent;
     --nn-theme-navitem-icon-color: var(--icon-color);
+    --nn-theme-calendar-hover-bg: transparent;
 }
 
 .nn-file-content,
@@ -700,9 +715,23 @@ body {
     border-radius: var(--radius-s);
 }
 
-.nn-file.nn-selected,
-.nn-file.nn-selected:hover {
-    box-shadow: var(--tab-shadow);
+.nn-icon-button.nn-icon-button-active {
+    --nn-theme-header-button-hover-bg: var(--background-secondary-alt);
+}
+
+.notebook-navigator-ios.notebook-navigator-ios-floating-toolbars .nn-mobile-toolbar-pill, .notebook-navigator-ios.notebook-navigator-ios-floating-toolbars .nn-mobile-toolbar-circle {
+    border: 2px solid transparent;
+}
+
+.nn-navitem.nn-selected:after,
+.nn-folder.nn-selected:after,
+.nn-navitem.nn-selected:hover,
+.nn-folder.nn-selected:hover {
+    color: var(--text-extreme);
+    border-radius: var(--radius-l);
+    background-color: var(--nav-item-background-active);
+    --nn-theme-navitem-hover-bg: var(--nav-item-background-active);
+    --nn-theme-header-button-hover-bg: var(--nav-item-background-active);
 }
 
 .nn-file.nn-selected .nn-file-tag:not(.nn-file-property):not([data-has-color='true']):not([data-has-background='true']),
@@ -710,7 +739,6 @@ body {
     --nn-file-pill-border-color-resolved: transparent;
     background-color: var(--tag-background);
     color: var(--tag-color);
-    font-weight: 550;
     font-size: var(--tag-size);
 }
 
@@ -729,15 +757,37 @@ body {
     animation: fade-in 0.2s ease-out;
 }
 
+.nn-quick-action-separator {
+    background-color: transparent;
+}
+
+.nn-quick-action-item {
+    padding: 0px;
+    margin: 3px;
+}
+
 .nn-quick-actions-panel {
     border-radius: 12px;
-    padding: 8px;
+    padding: 12px;
+    animation: fade-in 150ms linear;
+}
+
+.nn-navigation-calendar-overlay {
     animation: fade-in 150ms linear;
 }
 
 .nn-navitem-icon svg {
     stroke-width: 2.1px !important;
 }
+
+.notebook-navigator-ios.notebook-navigator-ios-floating-toolbars .nn-mobile-toolbar-button svg:not(.nn-vault-icon-svg) {
+    stroke-width: 1.75;
+}
+
+.is-mobile.is-floating-nav .workspace-drawer .workspace-leaf-content::after {
+    display: none;
+}
+
 
 /* TYPOGRAPHY UPDATE */
 
