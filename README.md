@@ -1,7 +1,7 @@
 # Nu Ayu Theme for Obsidian
-Latest version: **1.7.4** — now with full Notebook Navigator styling
+Latest version: **1.7.5** — now with full Notebook Navigator styling
 
-Updated: **2026-08-21**
+Updated: **2026-08-23**
 
 A minimal theme built around restraint. Soft, rounded surfaces, transparent dividers, and a deliberately muted text palette keep the interface quiet so your notes stay loud. Removed unnecessary hover effects, highlights, and other things that distract you from what's important – your thinking process.
 
