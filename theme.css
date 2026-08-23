@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Nu Ayu for Obsidian
-Version 1.7.4
+Version 1.7.5
 https://github.com/MrParalloid/nu-ayu/
 ───────────────────────────────────────*/
 /* @settings
@@ -62,7 +62,8 @@ body {
     --anim-motion-smooth: cubic-bezier(0.48, 0.2, 0.5, 1);
     --anim-motion-swing: cubic-bezier(0.22, 0.82, 0.49, 1);
     --background-modifier-hover: var(--text-selection);
-    --background-modifier-form-field-hover: var(--background-secondary-alt);
+    --background-modifier-form-field-hover: var(--background-secondary);
+    --background-modifier-border-focus: var(--color-accent);
     --bases-cards-radius: var(--radius-s);
     --bases-cards-shadow-hover: var(--shadow-s);
     --bases-cards-shadow: var(--shadow-s);
@@ -94,6 +95,7 @@ body {
     --code-string: #82ba6a;
     --code-tag: #ba6a6b;
     --code-value: #a86aba;
+    --color-base-25: var(--background-primary-alt) !important;
     --divider-color: transparent !important;
     --dropdown-background: var(--background-secondary-alt) !important;
     --dropdown-background-hover: var(--dropdown-background) !important;
@@ -582,6 +584,10 @@ body:not(.is-phone) .prompt {
     display: none;
 }
 
+.bases-view[data-view-type="cards"] {
+    --bases-embed-padding: var(--size-4-2) 8px;   
+}
+
 .is-phone .bases-embed, 
 .is-phone .cm-lang-base {
     padding-left: 20px;
@@ -709,6 +715,10 @@ body,
     --nn-theme-navitem-hover-bg: trasparent;
     --nn-theme-navitem-icon-color: var(--icon-color);
     --nn-theme-calendar-hover-bg: transparent;
+    --nn-theme-calendar-weekend-bg: color-mix(in srgb, var(--nav-item-background-active) 50%, transparent);
+    --nn-theme-calendar-day-today-bg: transparent;
+    --nn-theme-calendar-day-today-color: var(--color-accent);
+    --nn-theme-navitem-name-color: var(--text-muted);
 }
 
 .nn-file-content,
