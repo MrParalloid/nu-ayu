@@ -19,7 +19,6 @@ The approach was "future-proof changes" — change only where it matters for rem
 - Very nice looking Dark Mode crafted from scratch with optional full black backgrounds option for mobile devices
 - Special attention to mobile devices – bigger tap areas, file tree, reduced animations, and more
 - Full size sidebars on phones
-- Meaningful padding for Bases embeds on phone screens
 - Custom colors for Callouts
 - Custom colors for Code Blocks
 - Some love for Bases Cards appearance
