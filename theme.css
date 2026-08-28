@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Nu Ayu for Obsidian
-Version 1.7.5
+Version 1.7.6
 https://github.com/MrParalloid/nu-ayu/
 ───────────────────────────────────────*/
 /* @settings
@@ -96,25 +96,21 @@ body {
     --code-tag: #ba6a6b;
     --code-value: #a86aba;
     --color-base-25: var(--background-primary-alt) !important;
+    --accent-color: #e96100;
+    --color-accent: var(--accent-color);
     --divider-color: transparent !important;
     --dropdown-background: var(--background-secondary-alt) !important;
     --dropdown-background-hover: var(--dropdown-background) !important;
     --embed-block-shadow-hover: none;
     --font-bold: calc(var(--font-normal) + var(--bold-modifier));
     --font-normal: 350;
-    /* --h1-color: var(--text-extreme); */
     --h1-weight: 500;
-    /* --h2-color: var(--text-extreme); */
     --h2-weight: 500;
-    /* --h3-color: var(--text-extreme); */
     --h3-weight: 500;
-    /* --h4-color: var(--text-extreme); */
     --h4-size: 1em;
     --h4-weight: 500;
-    /* --h5-color: var(--text-extreme); */
     --h5-size: 1em;
     --h5-weight: 500;
-    /* --h6-color: var(--text-extreme); */
     --h6-size: 1em;
     --h6-weight: 300;
     --hr-thickness: 1px;
@@ -122,6 +118,7 @@ body {
     --input-shadow-hover: var(--shadow-s) !important;
     --input-shadow: var(--shadow-s) !important;
     --interactive-hover: var(--background-modifier-hover) !important;
+    --interactive-accent: var(--color-accent) !important;
     --link-color-hover: var(--link-color);
     --link-decoration-hover: none;
     --link-decoration: none;
@@ -198,13 +195,15 @@ body:not(.is-phone) .base-toolbar-sort-item, body:not(.is-phone) .base-toolbar-g
     --metadata-property-box-shadow: none;
 }
 
+.bases-toolbar .bases-toolbar-item.bases-toolbar-views-menu .text-icon-button {
+    color: var(--text-extreme);
+    font-weight: 550;
+}
+
 .theme-dark {
-    --accent-color: #e96100 !important;
-    --color-accent: #e96100 !important;
     --bases-cards-background: var(--background-primary-alt);
     --color-base-30: var(--background-secondary-alt);
     --color-base-35: var(--background-secondary-alt);
-    --interactive-accent: #e96100 !important;
     --shadow-opacity: 0.5;
     --text-extreme: #fff;
     --text-faint: #777992;
@@ -229,15 +228,12 @@ body:not(.is-phone) .base-toolbar-sort-item, body:not(.is-phone) .base-toolbar-g
 }
 
 .theme-light {
-    --accent-color: #e96100 !important;
-    --color-accent: #e96100 !important;
     --bases-cards-background: var(--background-primary);
     --background-primary-alt: #f2f2f2;
     --background-primary: #fafafa;
     --background-secondary-alt: #e3e3e1;
     --background-secondary: #f4f4f4;
     --background-extreme: var(--background-primary-alt);
-    --interactive-accent: #e96100 !important;
     --shadow-opacity: 0.1;
     --text-extreme: #525065;
     --text-faint: #a8a5bb;
@@ -586,11 +582,6 @@ body:not(.is-phone) .prompt {
 
 .bases-view[data-view-type="cards"] {
     --bases-embed-padding: var(--size-4-2) 8px;   
-}
-
-.is-phone .bases-embed, 
-.is-phone .cm-lang-base {
-    padding-left: 20px;
 }
 
 .bases-table-cell.bases-rendered-value,
