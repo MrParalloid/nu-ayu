@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Nu Ayu for Obsidian
-Version 1.7.7
+Version 1.7.8
 https://github.com/MrParalloid/nu-ayu/
 ───────────────────────────────────────*/
 /* @settings
@@ -264,7 +264,7 @@ body:not(.is-phone) .base-toolbar-sort-item, body:not(.is-phone) .base-toolbar-g
     --background-extreme: var(--background-primary-alt);
     --background-modifier-border: #ececec;
     --color-base-30: var(--background-secondary-alt);
-    --color-base-35: var(--background-secondary-alt);
+    /* --color-base-35: var(--background-secondary-alt); */
     --shadow-opacity: 0.1;
     --table-border-color: var(--background-secondary);
     --text-extreme: #525065;
@@ -612,8 +612,8 @@ body:not(.is-phone) .prompt {
     display: none;
 }
 
-.bases-view[data-view-type="cards"] {
-    --bases-embed-padding: var(--size-4-2) 8px;   
+.bases-embed .bases-view[data-view-type="cards"] {
+    --bases-embed-padding: var(--size-4-2) 8px;
 }
 
 .workspace-leaf-content[data-type="markdown"] .bases-embed .bases-view {
