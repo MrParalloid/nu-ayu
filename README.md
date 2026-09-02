@@ -1,5 +1,5 @@
 # Nu Ayu Theme for Obsidian
-Latest version: **1.7.7** — now with full Notebook Navigator styling
+Latest version: **1.7.8** — now with full Notebook Navigator styling
 
 Updated: **2026-09-02**
 
