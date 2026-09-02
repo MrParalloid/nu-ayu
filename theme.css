@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Nu Ayu for Obsidian
-Version 1.7.6
+Version 1.7.7
 https://github.com/MrParalloid/nu-ayu/
 ───────────────────────────────────────*/
 /* @settings
@@ -62,11 +62,14 @@ body {
     --anim-motion-smooth: cubic-bezier(0.48, 0.2, 0.5, 1);
     --anim-motion-swing: cubic-bezier(0.22, 0.82, 0.49, 1);
     --background-modifier-hover: var(--text-selection);
-    --background-modifier-form-field-hover: var(--background-secondary);
+    --background-modifier-form-field-hover: var(--background-primary);
     --background-modifier-border-focus: var(--color-accent);
+    --background-modifier-border-hover: transparent;
     --bases-cards-radius: var(--radius-s);
     --bases-cards-shadow-hover: var(--shadow-s);
     --bases-cards-shadow: var(--shadow-s);
+    --bases-filter-input-background: var(--background-primary);
+    --bases-table-header-background-hover: transparent;
     --bold-modifier: 250;
     --callout-bug: #d73b0b;
     --callout-default: #5f5f8f;
@@ -151,13 +154,25 @@ body {
     --shadow-s: 0 0 8px rgba(0,0,0,var(--shadow-opacity)) !important;
     --tab-curve: 0px;
     --tab-radius-active: 12px 12px 0 0;
-    --table-border-color: var(--background-secondary-alt);
     --table-border-width: 1px;
     --titlebar-background-focused: var(--background-secondary);
     --titlebar-background: var(--background-secondary);
     --workspace-background-translucent: rgba(var(--mono-rgb-0), 0.2);
     --divider-width-hover: 5px;
     --raised-blur: blur(3px) saturate(1.5) brightness(1.15);
+}
+
+.bases-toolbar-menu .bases-toolbar-section-header {
+    --flair-background: var(--text-highlight-bg);
+}
+
+.bases-toolbar {
+    --background-modifier-hover: transparent;
+}
+
+.is-mobile {
+    --interactive-normal: var(--color-base-30);
+    --mobile-sidebar-background: var(--background-secondary);
 }
 
 .workspace-leaf-resize-handle {
@@ -200,8 +215,21 @@ body:not(.is-phone) .base-toolbar-sort-item, body:not(.is-phone) .base-toolbar-g
     font-weight: 550;
 }
 
+.bases-header {
+    border: none;
+}
+
+.is-grouped .bases-cards-container .bases-cards-group {
+    border: none;
+}
+
+.value-list-element svg {
+    color: var(--accent-color);
+}
+
 .theme-dark {
     --bases-cards-background: var(--background-primary-alt);
+    --table-border-color: var(--background-secondary-alt);
     --color-base-30: var(--background-secondary-alt);
     --color-base-35: var(--background-secondary-alt);
     --shadow-opacity: 0.5;
@@ -231,10 +259,14 @@ body:not(.is-phone) .base-toolbar-sort-item, body:not(.is-phone) .base-toolbar-g
     --bases-cards-background: var(--background-primary);
     --background-primary-alt: #f2f2f2;
     --background-primary: #fafafa;
-    --background-secondary-alt: #e3e3e1;
+    --background-secondary-alt: #fafafa;
     --background-secondary: #f4f4f4;
     --background-extreme: var(--background-primary-alt);
+    --background-modifier-border: #ececec;
+    --color-base-30: var(--background-secondary-alt);
+    --color-base-35: var(--background-secondary-alt);
     --shadow-opacity: 0.1;
+    --table-border-color: var(--background-secondary);
     --text-extreme: #525065;
     --text-faint: #a8a5bb;
     --text-highlight-bg: rgba(180,255,100,0.5);
@@ -584,6 +616,24 @@ body:not(.is-phone) .prompt {
     --bases-embed-padding: var(--size-4-2) 8px;   
 }
 
+.workspace-leaf-content[data-type="markdown"] .bases-embed .bases-view {
+    border-color: transparent;
+}
+
+.bases-search-row {
+    --input-border-width: 1px;
+    --background-modifier-border: var(--color-base-30);
+    --background-modifier-border-hover: var(--color-base-30);
+}
+
+.bases-search-row:active,
+.bases-search-row:hover {
+    --background-modifier-border-hover: var(--accent-color);
+}
+.formula-editor {
+    background-color: var(--background-modifier-form-field-hover);
+}
+
 .bases-table-cell.bases-rendered-value,
 .bases-list-item .list-bullet + .bases-rendered-value {
     font-weight: var(--link-weight);
@@ -626,10 +676,23 @@ body:not(.is-phone) .prompt {
     display: none;
 }
 
-.text-icon-button.has-active-menu,
-.text-icon-button:hover,
-.metadata-add-button {
+body:not(.is-mobile) .text-icon-button.is-active:hover,
+body:not(.is-mobile) .text-icon-button.is-active,
+body:not(.is-mobile) .text-icon-button:hover,
+body:not(.is-mobile) .metadata-add-button {
     background-color: transparent;
+    transition: color 0.15s linear;
+}
+
+body:not(.is-mobile) .text-icon-button.has-active-menu:hover,
+body:not(.is-mobile) .text-icon-button.has-active-menu {
+    /* background-color: var(--interactive-hover); */
+     --icon-color-active: var(--text-extreme) !important;
+}
+
+.is-mobile.is-floating-nav .mod-raised {
+    border-radius: var(--radius-l);
+    background-color: var(--background-secondary-alt);
 }
 
 body.is-mobile .metadata-container {
