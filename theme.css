@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Nu Ayu for Obsidian
-Version 1.7.8
+Version 1.7.9
 https://github.com/MrParalloid/nu-ayu/
 ───────────────────────────────────────*/
 /* @settings
@@ -68,6 +68,8 @@ body {
     --bases-cards-radius: var(--radius-s);
     --bases-cards-shadow-hover: var(--shadow-s);
     --bases-cards-shadow: var(--shadow-s);
+    --bases-kanban-card-shadow: var(--shadow-s);
+    --bases-kanban-card-shadow-hover: var(--shadow-s);
     --bases-filter-input-background: var(--background-primary);
     --bases-table-header-background-hover: transparent;
     --bold-modifier: 250;
@@ -618,6 +620,10 @@ body:not(.is-phone) .prompt {
 
 .workspace-leaf-content[data-type="markdown"] .bases-embed .bases-view {
     border-color: transparent;
+}
+
+.prompt-input {
+    border: none !important;
 }
 
 .bases-search-row {
