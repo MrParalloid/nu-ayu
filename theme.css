@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Nu Ayu for Obsidian
-Version 1.7.9
+Version 1.7.10
 https://github.com/MrParalloid/nu-ayu/
 ───────────────────────────────────────*/
 /* @settings
@@ -622,10 +622,6 @@ body:not(.is-phone) .prompt {
     border-color: transparent;
 }
 
-.prompt-input {
-    border: none !important;
-}
-
 .bases-search-row {
     --input-border-width: 1px;
     --background-modifier-border: var(--color-base-30);
@@ -645,6 +641,7 @@ body:not(.is-phone) .prompt {
     font-weight: var(--link-weight);
 }
 
+.hide-card-labels .bases-kanban-card-label,
 .hide-card-labels .bases-cards-label {
     display: none;
 }
