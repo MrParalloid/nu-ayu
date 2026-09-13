@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Nu Ayu for Obsidian
-Version 1.7.11
+Version 1.8
 https://github.com/MrParalloid/nu-ayu/
 ───────────────────────────────────────*/
 /* @settings
@@ -43,6 +43,12 @@ settings:
         id: hide-card-labels
         title: Hide Bases Labels
         description: Remove property labels from Bases Cards view.
+        type: class-toggle
+        default: true
+    -    
+        id: hide-bases-header
+        title: Hide Bases Header in Reading View
+        description: Remove Bases toolbar entired when in Reading mode.
         type: class-toggle
         default: true
 */
@@ -173,7 +179,7 @@ body {
 }
 
 .is-mobile {
-    --interactive-normal: var(--color-base-30);
+    --interactive-normal: var(--background-secondary-alt) !important;
     --mobile-sidebar-background: var(--background-secondary);
 }
 
@@ -255,6 +261,7 @@ body:not(.is-phone) .base-toolbar-sort-item, body:not(.is-phone) .base-toolbar-g
     --background-primary-alt: #101014;
     --background-secondary: #19181f;
     --background-secondary-alt: #272530;
+    --shadow-opacity: 0;
 }
 
 .theme-light {
@@ -266,7 +273,6 @@ body:not(.is-phone) .base-toolbar-sort-item, body:not(.is-phone) .base-toolbar-g
     --background-extreme: var(--background-primary-alt);
     --background-modifier-border: #ececec;
     --color-base-30: var(--background-secondary-alt);
-    /* --color-base-35: var(--background-secondary-alt); */
     --shadow-opacity: 0.1;
     --table-border-color: var(--background-secondary);
     --text-extreme: #525065;
@@ -614,6 +620,15 @@ body:not(.is-phone) .prompt {
     display: none;
 }
 
+.is-mobile .menu-group .menu-item:not(.is-label):after {
+    display: none;
+}
+
+.hide-bases-header .markdown-reading-view .bases-header {
+    display: none;
+    transition: display 0.3s linear;
+}
+
 .bases-embed .bases-view[data-view-type="cards"] {
     --bases-embed-padding: var(--size-4-2) 8px;
 }
@@ -693,8 +708,12 @@ body:not(.is-mobile) .text-icon-button.has-active-menu {
      --icon-color-active: var(--text-extreme) !important;
 }
 
-.is-mobile.is-floating-nav .mod-raised {
+.is-mobile.is-floating-nav .mod-raised:not(.prompt-input-container) {
     border-radius: var(--radius-l);
+    background-color: var(--background-secondary-alt);
+}
+
+.is-phone .prompt-input-container {
     background-color: var(--background-secondary-alt);
 }
 
