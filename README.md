@@ -1,7 +1,7 @@
 # Nu Ayu Theme for Obsidian
-Latest version: **1.8.1** — new setting to hide **Bases Toolbar** in Reading Mode
+Latest version: **1.8.5** — tons of fixes + new setting to hide **Bases Toolbar** in Reading Mode
 
-Updated: **2026-09-13**
+Updated: **2026-09-15**
 
 A minimal theme built around restraint. Soft, rounded surfaces, transparent dividers, and a deliberately muted text palette keep the interface quiet so your notes stay loud. Removed unnecessary hover effects, highlights, and other things that distract you from what's important – your thinking process.
 
