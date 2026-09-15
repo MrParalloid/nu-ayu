@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Nu Ayu for Obsidian
-Version 2.0.0
+Version 2.0.1
 https://github.com/MrParalloid/nu-ayu/
 ───────────────────────────────────────*/
 /* @settings
@@ -219,7 +219,7 @@ body {
 	--color-sidebar: #1a161c;
 	--dropdown-background: var(--color-darker);
 	--input-background: rgba(60,60,76,0.3);
-	--shadow-opacity: 0.8;
+	--shadow-opacity: 0.5;
 	--text-extreme: #ffffff;
 	--text-faint: #777992;
 	--text-highlight-bg: rgba(30,235,100,0.3);
@@ -236,7 +236,7 @@ body {
     --color-darkest: #272530;
     --color-main: #000000;
     --color-sidebar: #19181f;
-    --shadow-opacity: 0.8;
+    --shadow-opacity: 0.3;
     --inteactive-normal: color-mix(in srgb, var(--color-sidebar) 93%, white 7%);
 }
 
@@ -358,7 +358,26 @@ body {
 
 textarea:active, .multi-select-container:active, input.metadata-input-text:active, input[type='date']:active, input[type='datetime-local']:active, input[type='text']:active, input[type='search']:active, input[type='email']:active, input[type='password']:active, input[type='number']:active, textarea:focus, .multi-select-container:focus, input.metadata-input-text:focus, input[type='date']:focus, input[type='datetime-local']:focus, input[type='text']:focus, input[type='search']:focus, input[type='email']:focus, input[type='password']:focus, input[type='number']:focus, textarea:focus-visible, .multi-select-container:focus-visible, input.metadata-input-text:focus-visible, input[type='date']:focus-visible, input[type='datetime-local']:focus-visible, input[type='text']:focus-visible, input[type='search']:focus-visible, input[type='email']:focus-visible, input[type='password']:focus-visible, input[type='number']:focus-visible {
  	 box-shadow: none;
+ 	 border-color: var(--color-accent) !important;
  }
+
+.modal.mod-settings:has(
+	.vertical-tab-nav-item[data-setting-id="appearance"].is-active
+)
+.setting-group:first-of-type
+.setting-items > .setting-item:nth-child(2) {
+	.setting-item-control {
+		display: none;
+	}
+	.setting-item-description {
+		font-size: 0;
+		&::after {
+			content: "Color accent modification is not available in this theme";
+			font-size: var(--font-ui-smaller);
+			color: var(--text-muted);
+		}
+	}
+}
 
 .nav-folder-title:hover,
 .nav-folder-title {
@@ -565,16 +584,25 @@ body.is-tablet.zenmode-active {
     margin-top: 2px;
 }
 
+.status-bar {
+	--status-left-offset: 0px;
+	--status-right-offset: 0px;
+
+	transform: translateX(
+		calc(
+			-50%
+			+ var(--status-left-offset)
+			- var(--status-right-offset)
+		)
+	);
+}
+
 body:has(.workspace.is-left-sidedock-open) .status-bar {
-    transform: translateX(calc(-50% + (var(--left-sidebar-width, 250px) / 2)));
+	--status-left-offset: calc(var(--left-sidebar-width, 250px) / 2);
 }
 
 body:has(.workspace.is-right-sidedock-open) .status-bar {
-    transform: translateX(calc(-50% - (var(--right-sidebar-width, 320px) / 2)));
-}
-
-body:has(.workspace.is-left-sidedock-open):has(.workspace.is-right-sidedock-open) .status-bar {
-    transform: translateX(calc(-50% + (var(--left-sidebar-width, 250px) / 2) - (var(--right-sidebar-width, 320px) / 2)));
+	--status-right-offset: calc(var(--right-sidebar-width, 320px) / 2);
 }
 
 .clickable-icon:hover {
