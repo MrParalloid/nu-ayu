@@ -1,5 +1,5 @@
 # Nu Ayu Theme for Obsidian
-Latest version: **1.8.5** — tons of fixes + new setting to hide **Bases Toolbar** in Reading Mode
+Latest version: **2.0.0** — full rewrite.
 
 Updated: **2026-09-15**
 
