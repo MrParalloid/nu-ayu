@@ -1,5 +1,5 @@
 # Nu Ayu Theme for Obsidian
-Latest version: **2.0.0** — full rewrite.
+Latest version: **2.0.1** — full rewrite.
 
 Updated: **2026-09-15**
 
