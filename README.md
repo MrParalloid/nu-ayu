@@ -3,21 +3,23 @@ Latest version: **2.0.2** — full rewrite.
 
 Updated: **2026-09-16**
 
-The theme is less about the look, and more about the feel — it feels more like paper. Paper doesn't change color when you hover a pencil over it, it doesn't blink or make you feel "caged". Those original dividers and box shadows are doing exactly this — it leads to this "synthetic" feel by being *too much* interactive. So most of the work was done to remove stuff, rather than add stuff.
+This theme is less about the look, and more about the feel — it feels more like paper. Paper doesn't change color when you hover a pencil over it, it doesn't blink or make you feel "caged". The original dividers, effects, and box shadows are interactive, but lead to the "synthetic" feel — making Obsidian *too much* interactive.
 
-The resulting theme is open, natural, and non-distracting. Reduced contrast  from Ayu colors is aimed to take off some load off user's eyes. Dark mode is crafted from scratch: deep violet-tinged backgrounds with a consistent warm orange accent throughout.
+So most of the work was done to remove stuff, rather than add stuff.
+
+The resulting theme is open, natural, and non-distracting. Reduced contrast of Ayu colors is aimed to take off some load off user's eyes. Dark mode is crafted from scratch: deep violet-tinged backgrounds with a consistent warm orange accent throughout.
 
 The goal was to help you focus on what matters — your thoughts and writing:
-	- Removed most of the borders, hover effects, highlights on hover, unexpected box-shadows, and other stuff that contributes to distraction
-	- Input fields look consistent throughout the app and platforms
-  - Bases views were heavily (heavily!) cleaned up both on desktop and mobiles
-  - Smooth fade-ins for the embedded content 
-  - Smooth appearance for the Markdown syntax
-	- Borders' looks are unified across the app
-	- Active sidebar elements have nice highlight
-  - Text in bold gets brighter,
-	- Folders can get accent color via Style Settings
-	- Code blocks looks consistent and inline with the theme
+- Removed most of the borders, hover effects, highlights on hover, unexpected box-shadows, and other stuff that contributes to distraction
+- Input fields look consistent throughout the app and platforms
+- Bases views were heavily (heavily!) cleaned up both on desktop and mobiles
+- Smooth fade-ins for the embedded content 
+- Smooth appearance for the Markdown syntax
+- Borders' looks are unified across the app
+- Active sidebar elements have nice highlight
+- Text in bold gets brighter,
+- Folders can get accent color via Style Settings
+- Code blocks looks consistent and inline with the theme
 
 ![](screenshots/ayu-screenshot.png)
 
