@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Nu Ayu for Obsidian
-Version 2.0.1
+Version 2.0.2
 https://github.com/MrParalloid/nu-ayu/
 ───────────────────────────────────────*/
 /* @settings
@@ -169,13 +169,12 @@ body {
 	--shadow-m: 0 0 15px rgba(0,0,0,var(--shadow-opacity)) !important;
 	--shadow-s: 0 0 8px rgba(0,0,0,var(--shadow-opacity)) !important;
 	--tab-curve: 0px;
-	--tab-outline-color: var(--color-sidebar);
 	--tab-switcher-preview-radius: var(--radius-m);
 	--table-border-color: var(--border-color);
 	--titlebar-background-focused: var(--background-secondary);
 	--titlebar-background: var(--background-secondary);
 	--touch-radius-xxs: var(--radius-s);
-	--workspace-background-translucent: rgba(var(--mono-rgb-0), 0.2);
+	--workspace-background-translucent: rgba(var(--mono-rgb-0), 0.4);
 }
 
 .mod-macos:not(.is-mobile) .mod-settings {
@@ -184,6 +183,14 @@ body {
 	--dropdown-background: var(--color-darker);
 	--input-radius: var(--radius-l);
 	--nav-item-size: 0.9em;
+}
+
+body:not(.is-translucent) {
+	--tab-outline-color: var(--color-sidebar);
+}
+
+.is-translucent {
+	--tab-outline-color: transparent;
 }
 
 .theme-light {
@@ -241,7 +248,7 @@ body {
 }
 
 .is-mobile {
-	--bases-filter-input-background: transprent;
+	--bases-filter-input-background: transparent;
 	--background-modifier-form-field-focus: var(--input-background);
 	--background-modifier-form-field-hover: var(--input-background);
 	--background-modifier-form-field: var(--input-background);
@@ -280,6 +287,10 @@ body {
 
 .is-mobile .bases-query-container {
 	--bases-filter-input-background: var(--input-background);
+}
+
+.community-item.is-selected .community-item-name {
+	color: var(--text-extreme);
 }
 
 .value-list-element svg {
@@ -571,6 +582,11 @@ body.is-tablet.zenmode-active {
     color: var(--icon-color);
 }
 
+body:not(.is-phone) .vertical-tab-nav-item.is-active {
+    color: var(--text-extreme);
+    --icon-color: var(--color-accent);
+}
+
 .mod-left-split .workspace-tab-header-container .workspace-tab-header.is-active:hover,
 .mod-right-split .workspace-tab-header-container .workspace-tab-header.is-active:hover,
 .mod-left-split .workspace-tab-header-container .workspace-tab-header.is-active,
@@ -782,7 +798,7 @@ body,
     --nn-theme-list-bg: var(--background-secondary);
     --nn-theme-navitem-bg: var(--background-secondary-alt);
     --nn-theme-navitem-border-radius: var(--radius-l);
-    --nn-theme-navitem-hover-bg: trasparent;
+    --nn-theme-navitem-hover-bg: transparent;
     --nn-theme-navitem-icon-color: var(--icon-color);
     --nn-theme-calendar-hover-bg: transparent;
     --nn-theme-calendar-weekend-bg: color-mix(in srgb, var(--nav-item-background-active) 50%, transparent);
