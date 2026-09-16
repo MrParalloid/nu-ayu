@@ -3,40 +3,48 @@ Latest version: **2.0.2** — full rewrite.
 
 Updated: **2026-09-16**
 
-A minimal theme built around restraint. Soft, rounded surfaces, transparent dividers, and a deliberately muted text palette keep the interface quiet so your notes stay loud. Removed unnecessary hover effects, highlights, and other things that distract you from what's important – your thinking process.
+The theme is less about the look, and more about the feel — it feels more like paper. Paper doesn't change color when you hover a pencil over it, it doesn't blink or make you feel "caged". Those original dividers and box shadows are doing exactly this — it leads to this "synthetic" feel by being *too much* interactive. So most of the work was done to remove stuff, rather than add stuff.
 
-Light mode draws from the Ayu color tradition: warm off-whites and purple-grey text that reduce eye strain without feeling washed out. 
-Dark mode is an original: deep violet-tinged backgrounds with a consistent warm orange accent throughout.
+The resulting theme is open, natural, and non-distracting. Reduced contrast  from Ayu colors is aimed to take off some load off user's eyes. Dark mode is crafted from scratch: deep violet-tinged backgrounds with a consistent warm orange accent throughout.
 
-The approach was "future-proof changes" — change only where it matters for removing distractions, improving focus, and smoothing experience – all while keeping longevity in mind. This keeps the theme stable across Obsidian updates and avoids the visual debt.
+The goal was to help you focus on what matters — your thoughts and writing:
+	- Removed most of the borders, hover effects, highlights on hover, unexpected box-shadows, and other stuff that contributes to distraction
+	- Input fields look consistent throughout the app and platforms
+  - Bases views were heavily (heavily!) cleaned up both on desktop and mobiles
+  - Smooth fade-ins for the embedded content 
+  - Smooth appearance for the Markdown syntax
+	- Borders' looks are unified across the app
+	- Active sidebar elements have nice highlight
+  - Text in bold gets brighter,
+	- Folders can get accent color via Style Settings
+	- Code blocks looks consistent and inline with the theme
 
 ![](screenshots/ayu-screenshot.png)
 
 ## Features 
 - Light & Dark modes
 - Super clean minimal look
-- Removed most of the borders, hover effects, highlights on hover, unexpected box-shadows, and other stuff that contributes to distraction
 - Very nice looking Dark Mode crafted from scratch with optional full black backgrounds option for mobile devices
 - Special attention to mobile devices – bigger tap areas, file tree, reduced animations, and more
-- Full size sidebars on phones
+- Full size sidebars
 - Custom colors for Callouts
 - Custom colors for Code Blocks
-- Some love for Bases Cards appearance
+- Tons of improvements for Bases — Bases cards, filters, formulas on all platforms
 - Dataview embeds and task lists now look much more "native" thanks to removing "foreign" animations and box-shadows effects
-- Smooth fade-ins for the embedded content 
-- Smooth appearance for the Markdown syntax
 - Full Notebook Navigator styling to match overall aesthetics
 - Style Settings support:
   - **Tab Close button on the left** – native feel for macOS and iPadOS 
   - **Thin Headers** for cleaner look
   - **Accent Folders** adds orange accent for visual hierarchy
-  - **Removing Labels** on Bases Cards
-  - **Clean links** – removing accents for notes heavy on internal links
+  - **Remove Bases Labels** on Bases Cards
+  - **Remove Bases Header** in Reading Mode
   - **Full black backgrounds** option for mobile devices
 
 As a result you have much more fluid, cohesive, and less overwhelming experience, with less distractions and more space for meaningful work.
 
 <a href='https://ko-fi.com/G2G21XAEJ9' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
+![](https://github.com/MrParalloid/nu-ayu/blob/main/screenshots/ayu-9.png)
 
 ## Manual Installation
 Note: for now this theme is still under review to get to the official catalog. Once it is there – you'll be able to find it through standard Obsidian theme repo.
@@ -49,7 +57,7 @@ Note: for now this theme is still under review to get to the official catalog. O
 5. Move the downloaded `theme.css` and `manifest.json` files into this new folder.
 6. Open Obsidian, go to **Settings** > **Appearance**, and select **Nu Ayu** from the Themes dropdown.
 
-## Screenshots
+## More Screenshots
 
 ![](https://github.com/MrParalloid/nu-ayu/blob/main/screenshots/ayu-2.png)
 ![](https://github.com/MrParalloid/nu-ayu/blob/main/screenshots/ayu-1.png)
