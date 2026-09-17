@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Nu Ayu for Obsidian
-Version 2.0.2
+Version 2.0.3
 https://github.com/MrParalloid/nu-ayu/
 ───────────────────────────────────────*/
 /* @settings
@@ -203,6 +203,12 @@ body:not(.is-translucent) {
 	--color-hover:  rgba(180,180,210,0.2);
 	--color-main: #fafafa;
 	--color-sidebar: #f4f4f4;
+	--color-green: #2a8343;
+	--color-orange: #e99f6a;
+	--color-purple: #c5b6e7;
+	--color-yellow: #e1de60;
+	--color-red: #c14778;
+	--color-flair: #2a8343;
 	--dropdown-background: var(--color-darker);
 	--input-background: rgba(177,174,197,0.2);
 	--shadow-opacity: 0.1;
@@ -224,6 +230,12 @@ body:not(.is-translucent) {
 	--color-hover:  rgba(80,80,110,0.2);
 	--color-main: #1f1f27;
 	--color-sidebar: #1a161c;
+	--color-green: #2d6b3e;
+	--color-orange: var(--color-accent);
+	--color-red: #c14778;
+	--color-purple: #c5b6e7;
+	--color-yellow: #c1be29;
+	--color-flair: #b3e083;
 	--dropdown-background: var(--color-darker);
 	--input-background: rgba(60,60,76,0.3);
 	--shadow-opacity: 0.5;
@@ -283,6 +295,10 @@ body:not(.is-translucent) {
 .bases-embed .bases-view[data-view-type="cards"]
   {
 	background-color: var(--color-main);
+}
+
+.bases-toolbar-menu .bases-toolbar-section-header {
+	--flair-color: var(--color-flair);
 }
 
 .is-mobile .bases-query-container {
@@ -443,7 +459,7 @@ b,
 }
 
 .suggestion-item.is-selected {
-	border-radius: var(--radius-l);
+	border-radius: var(--radius-m);
 }
 
 .canvas-card-menu {
@@ -525,6 +541,7 @@ body.is-tablet.zenmode-active {
     right: 18px;
 }
 
+.suggestion-container,
 .prompt {
 	--background-modifier-hover: var(--text-selection);
 }
@@ -894,7 +911,7 @@ body,
 	}
 	
 	body:not(.is-phone) .prompt {
-    animation: fade-in-prompt var(--anim-duration-fast) ease-out;
+    animation: fade-in-prompt var(--anim-duration-fast) var(--anim-motion-jumpy);
 	}
 	
 	body.button-close-left .workspace-tabs .workspace-tab-header-inner {
@@ -956,7 +973,7 @@ body,
 @keyframes fade-in-prompt {
     from {
         opacity: 0.1;
-        scale: 1.03;
+        scale: 1.05;
     }
     to {
         opacity: 1;
@@ -984,7 +1001,7 @@ body,
 
 body {
     --anim-motion-delay: cubic-bezier(0.87, 0.1, 0.25, 0.99);
-    --anim-motion-jumpy: cubic-bezier(0.76, 0.03, 0.5, 1.37);
+    --anim-motion-jumpy: cubic-bezier(.65,.42,.49,1.64);
     --anim-motion-smooth: cubic-bezier(0.48, 0.2, 0.5, 1);
     --anim-motion-swing: cubic-bezier(0.22, 0.82, 0.49, 1);
 }
