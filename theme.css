@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Nu Ayu for Obsidian
-Version 2.0.3
+Version 2.0.4
 https://github.com/MrParalloid/nu-ayu/
 ───────────────────────────────────────*/
 /* @settings
@@ -120,15 +120,9 @@ body {
 	--embed-block-shadow-hover: none;
 	--font-bold: calc(var(--font-normal) + var(--bold-modifier));
 	--font-normal: 350;
-	--h1-weight: 500;
-	--h2-weight: 500;
-	--h3-weight: 500;
 	--h4-size: 1em;
-	--h4-weight: 500;
 	--h5-size: 1em;
-	--h5-weight: 500;
 	--h6-size: 1em;
-	--h6-weight: 300;
 	--heading-spacing: 2em;
 	--hr-thickness: 2px;
 	--input-border-width: 2px;
@@ -276,6 +270,10 @@ body:not(.is-translucent) {
 .is-mobile.is-floating-nav .mod-raised:not(.prompt-input-container) {
     background-color: var(--color-darkest);
     box-shadow: var(--shadow-s);
+}
+
+.is-flashing {
+	border-radius: var(--radius-xs)
 }
 
 .tree-item-self.bookmark {
@@ -729,6 +727,16 @@ del,
 	background-color: var(--input-background);
 }
 
+.bases-cards-property.mod-title .bases-cards-line.bases-rendered-value,
+.bases-kanban-card-property.mod-title .bases-rendered-value {
+	color: var(--text-extreme);
+}
+
+.bases-cards-property:not(.mod-title) .bases-rendered-value,
+.bases-kanban-card-property:not(.mod-title) .bases-rendered-value {
+	color: var(--text-muted);
+}
+
 .is-phone .bases-query-container .filter-statement:focus-within {
 	box-shadow: 0 0 0 1px var(--accent-color);
 	border-radius: var(--radius-s);
@@ -763,7 +771,17 @@ del,
     color: var(--color-accent) !important;
 }
 
-.thin-headers {
+
+body:not(.thin-headers) {
+	--h1-weight: 500;
+	--h2-weight: 500;
+	--h3-weight: 500;
+	--h4-weight: 500;
+	--h5-weight: 500;
+	--h6-weight: 300;
+}
+
+body.thin-headers {
     --h1-weight: 350;
     --h2-weight: 250;
     --h3-weight: 250;
