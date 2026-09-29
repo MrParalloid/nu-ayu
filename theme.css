@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Nu Ayu for Obsidian
-Version 2.0.4
+Version 2.0.5
 https://github.com/MrParalloid/nu-ayu/
 ───────────────────────────────────────*/
 /* @settings
@@ -299,6 +299,13 @@ body:not(.is-translucent) {
 	--flair-color: var(--color-flair);
 }
 
+.bases-toolbar .has-active-menu {
+    --icon-color: var(--text-extreme);
+    --icon-color-hover: var(--text-extreme);
+    --icon-color-active: var(--text-extreme);
+    color: var(--text-extreme);
+}
+
 .is-mobile .bases-query-container {
 	--bases-filter-input-background: var(--input-background);
 }
@@ -389,6 +396,7 @@ textarea:active, .multi-select-container:active, input.metadata-input-text:activ
 .modal.mod-settings:has(
 	.vertical-tab-nav-item[data-setting-id="appearance"].is-active
 )
+
 .setting-group:first-of-type
 .setting-items > .setting-item:nth-child(2) {
 	.setting-item-control {
@@ -456,7 +464,8 @@ b,
     color: var(--text-extreme);   
 }
 
-.suggestion-item.is-selected {
+body:not(.is-mobile) .suggestion-item,
+.is-mobile .suggestion-item {
 	border-radius: var(--radius-m);
 }
 
