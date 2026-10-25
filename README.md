@@ -1,7 +1,7 @@
 # Nu Ayu Theme for Obsidian
-Latest version: **2.0.5** — compatible with 1.13.4.
+Latest version: **2.0.7** — compatible with 1.13.4.
 
-Updated: **2026-09-29**
+Updated: **2026-10-25**
 
 This theme is less about the look, and more about the feel — it feels more like paper. Paper doesn't change color when you hover a pencil over it, it doesn't blink or make you feel "caged". The original dividers, effects, and box shadows are interactive, but lead to the "synthetic" feel — making Obsidian *too much* interactive.
 
