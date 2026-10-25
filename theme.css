@@ -1,6 +1,6 @@
 /*──────────────────────────────────────
 Nu Ayu for Obsidian
-Version 2.0.5
+Version 2.0.7
 https://github.com/MrParalloid/nu-ayu/
 ───────────────────────────────────────*/
 /* @settings
@@ -187,6 +187,10 @@ body:not(.is-translucent) {
 	--tab-outline-color: transparent;
 }
 
+.workspace-drawer-backdrop {
+	opacity: 0 !important;
+}
+
 .theme-light {
 	--background-modifier-cover: rgba(220, 220, 222, 0.6);
 	--background-modifier-form-field: var(--input-background);
@@ -201,7 +205,6 @@ body:not(.is-translucent) {
 	--color-orange: #e99f6a;
 	--color-purple: #c5b6e7;
 	--color-yellow: #e1de60;
-	--color-red: #c14778;
 	--color-flair: #2a8343;
 	--dropdown-background: var(--color-darker);
 	--input-background: rgba(177,174,197,0.2);
@@ -226,7 +229,6 @@ body:not(.is-translucent) {
 	--color-sidebar: #1a161c;
 	--color-green: #2d6b3e;
 	--color-orange: var(--color-accent);
-	--color-red: #c14778;
 	--color-purple: #c5b6e7;
 	--color-yellow: #c1be29;
 	--color-flair: #b3e083;
@@ -237,7 +239,7 @@ body:not(.is-translucent) {
 	--text-faint: #777992;
 	--text-highlight-bg: rgba(30,235,100,0.3);
 	--text-muted: #a0a2b6;
-	--text-normal: #d2d4d8;
+	--text-normal: #c6c9cd;
 	--raised-background: var(--color-sidebar);
 }
 
@@ -265,11 +267,6 @@ body:not(.is-translucent) {
 
 .is-mobile .metadata-container {
 	background-color: transparent;
-}
-
-.is-mobile.is-floating-nav .mod-raised:not(.prompt-input-container) {
-    background-color: var(--color-darkest);
-    box-shadow: var(--shadow-s);
 }
 
 .is-flashing {
@@ -324,6 +321,17 @@ body:not(.is-translucent) {
 
 .metadata-properties-heading .collapse-indicator {
     display: none;
+}
+
+.empty-state-action-list > .text-icon-button.mod-pill {
+	border: 1px solid var(--background-primary);
+	background-color: var(--background-secondary);
+	color: var(--text-muted);
+}
+
+.empty-state-action-list > .text-icon-button.mod-pill:hover {
+	color: var(--text-normal);
+	background-color: var(--background-secondary);
 }
 
 .metadata-property,
